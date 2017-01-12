@@ -67,7 +67,8 @@ void JuegoPG::newPuntos(ObjetoJuego* po){// los puntos tanto de globos como de p
 }
 
 void JuegoPG::newPremio(){//llamamos al reinicia 
-	dynamic_cast<Premio*>(globos[numglobos])->reiniciaPremio();
+	dynamic_cast<Premio*>(globos[4])->reiniciaPremio();
+
 }
 
 void JuegoPG::initMedia(){
@@ -189,7 +190,7 @@ bool JuegoPG::initGlobos(){
 	globos.emplace_back(new GloboA(this, TGlobo, rand() % 700, rand() % 700));// punto 3 dos de cada tipo
 	
 	globos.emplace_back(new Premio(this, TPremio, rand() % 700, rand() % 700));
-	globos.emplace_back(new Premio(this, TPremio, rand() % 700, rand() % 700));
+	//globos.emplace_back(new Premio(this, TPremio, rand() % 700, rand() % 700));
 
 	globos.emplace_back(new Mariposa(this, TMariposa, rand() % 700, rand() % 700));
 	globos.emplace_back(new Mariposa(this, TMariposa, rand() % 700, rand() % 700));

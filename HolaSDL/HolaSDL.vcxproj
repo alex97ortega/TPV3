@@ -66,6 +66,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Error.cpp" />
     <ClCompile Include="Globo.cpp" />
     <ClCompile Include="GloboA.cpp" />
     <ClCompile Include="JuegoPG.cpp" />
@@ -73,9 +74,12 @@
     <ClCompile Include="Mariposa.cpp" />
     <ClCompile Include="ObjetoPG.cpp" />
     <ClCompile Include="Premio.cpp" />
+    <ClCompile Include="SDLError.cpp" />
+    <ClCompile Include="texturasError.cpp" />
     <ClCompile Include="texturasSDL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Error.h" />
     <ClInclude Include="Globo.h" />
     <ClInclude Include="GloboA.h" />
     <ClInclude Include="JuegoPG.h" />
@@ -83,6 +87,8 @@
     <ClInclude Include="ObjetoJuego.h" />
     <ClInclude Include="ObjetoPG.h" />
     <ClInclude Include="Premio.h" />
+    <ClInclude Include="SDLError.h" />
+    <ClInclude Include="texturasError.h" />
     <ClInclude Include="texturasSDL.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
