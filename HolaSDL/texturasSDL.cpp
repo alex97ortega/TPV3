@@ -1,6 +1,7 @@
 #include "texturasSDL.h"
 #include "SDL.h"
 #include <iostream>
+#include "texturasError.h"
 
 
 texturasSDL::texturasSDL()
@@ -25,6 +26,7 @@ bool texturasSDL::load(SDL_Renderer*prender, std::string const& nombArch){
 
 	pTempSurface = IMG_Load(nombArch.c_str());
 	if (pTempSurface == nullptr) {
+		throw texturasError("Unable to load image");/////
 		std::cout << "Unable to load image " << nombArch << "! \nSDL Error: " << SDL_GetError() << '\n';
 		cargar = false;
 	}

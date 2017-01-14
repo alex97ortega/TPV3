@@ -66,7 +66,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Boton.cpp" />
     <ClCompile Include="Error.cpp" />
+    <ClCompile Include="EstadoPG.cpp" />
     <ClCompile Include="Globo.cpp" />
     <ClCompile Include="GloboA.cpp" />
     <ClCompile Include="JuegoPG.cpp" />
@@ -79,7 +81,10 @@
     <ClCompile Include="texturasSDL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boton.h" />
     <ClInclude Include="Error.h" />
+    <ClInclude Include="EstadoJuego.h" />
+    <ClInclude Include="EstadoPG.h" />
     <ClInclude Include="Globo.h" />
     <ClInclude Include="GloboA.h" />
     <ClInclude Include="JuegoPG.h" />

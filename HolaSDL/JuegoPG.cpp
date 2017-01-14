@@ -3,6 +3,7 @@
 #include "GloboA.h"
 #include "Mariposa.h"
 #include "Premio.h"
+#include "SDLError.h"
 #include <iostream>
 #include <typeinfo>
 #include <vector>
@@ -74,18 +75,17 @@ void JuegoPG::newPremio(){//llamamos al reinicia
 void JuegoPG::initMedia(){
 
 	//cargar todo tipo de texturas
+		texturas.emplace_back(new texturasSDL);
+		texturas[0]->load(getRender(), ntexturas[0]);
 
-	texturas.emplace_back(new texturasSDL);
-	texturas[0]->load(getRender(), ntexturas[0]);
+		texturas.emplace_back(new texturasSDL);
+		texturas[1]->load(getRender(), ntexturas[1]);
 
-	texturas.emplace_back(new texturasSDL);
-	texturas[1]->load(getRender(), ntexturas[1]);
+		texturas.emplace_back(new texturasSDL);
+		texturas[2]->load(getRender(), ntexturas[2]);
 
-	texturas.emplace_back(new texturasSDL);
-	texturas[2]->load(getRender(), ntexturas[2]);
-	
-	texturas.emplace_back(new texturasSDL);
-	texturas[3]->load(getRender(), ntexturas[3]);
+		texturas.emplace_back(new texturasSDL);
+		texturas[3]->load(getRender(), ntexturas[3]);
 }
 
 void JuegoPG::freeMedia(){
@@ -136,6 +136,8 @@ bool JuegoPG::initSDL() {
 
 	//Initialize SDL
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
+		throw SDLError("SDL could not initialize!");///////
+
 		std::cout << "SDL could not initialize! \nSDL_Error: " << SDL_GetError() << '\n';
 		success = false;
 	}
@@ -144,6 +146,8 @@ bool JuegoPG::initSDL() {
 		//le paso el tamaño que quiero que tenga la ventana de mi juego
 		pWin = SDL_CreateWindow("SDL Hello World", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, alto, ancho, SDL_WINDOW_SHOWN);
 		if (pWin == nullptr){
+			throw SDLError("Window could not be created!");///////////////
+
 			std::cout << "Window could not be created! \nSDL_Error: " << SDL_GetError() << '\n';
 			success = false;
 		}
@@ -152,6 +156,8 @@ bool JuegoPG::initSDL() {
 			pRender = SDL_CreateRenderer(pWin, -1, SDL_RENDERER_ACCELERATED);
 			//SDL_SetRenderDrawColor(pRender, color.r, color.g, color.b, color.a); //Set background color to black 
 			if (pRender == nullptr){
+				throw SDLError("Renderer could not be created!");//////Puedes hacer un error especial para render
+
 				std::cout << "Renderer could not be created! \nSDL_Error: " << SDL_GetError() << '\n';
 				success = false;
 			}
