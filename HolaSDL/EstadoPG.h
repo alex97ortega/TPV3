@@ -12,7 +12,6 @@ protected:
 
 	JuegoPG* ptajuego;
 	//vector de objetos, ...
-	//implementa utilidades para las
-	//subclases(MenuP, PlayPG, GameOver y Pausa)
+	//implementa utilidades para las subclases(MenuP, PlayPG, GameOver y Pausa)
 };
 
