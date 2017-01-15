@@ -21,18 +21,18 @@ JuegoPG::JuegoPG()
 
 	srand(SDL_GetTicks());
 
-	numglobos = 3; // evaluacion 
+	/*numglobos = 3; // evaluacion 
 	numglobosA = 3;
 	finglobos = 7;
 
 	error = false;
-	gameOver = false;
+	gameOver = false;*/
 	exit = false;
 	espera = false;
 
 	initSDL();
 	initMedia();
-	initGlobos();
+	//initGlobos();
 
 
 }
@@ -41,7 +41,7 @@ JuegoPG::JuegoPG()
 JuegoPG::~JuegoPG()
 {
 	freeMedia();
-	freeGlobos();
+	//freeGlobos();
 	closeSDL();
 	pWin = nullptr;
 	pRender = nullptr;
@@ -56,7 +56,7 @@ void JuegoPG::getMousePos(int & mpx, int & mpy) const{ //obtener posicion del mo
 	mpy = my;
 }
 
-void JuegoPG::newBaja(ObjetoJuego* po){//cada vez que se rompe un globo 
+/*void JuegoPG::newBaja(ObjetoJuego* po){//cada vez que se rompe un globo 
 	finglobos--;
 }
 
@@ -70,7 +70,7 @@ void JuegoPG::newPuntos(ObjetoJuego* po){// los puntos tanto de globos como de p
 void JuegoPG::newPremio(){//llamamos al reinicia 
 	dynamic_cast<Premio*>(globos[4])->reiniciaPremio();
 
-}
+}*/
 
 void JuegoPG::initMedia(){
 
@@ -99,7 +99,7 @@ void JuegoPG::freeMedia(){
 
 
 
-void JuegoPG::run(){ 
+/*void JuegoPG::run(){ 
 
 	Uint32 MSxUpdate = 500; // VELOCIDAD DE LA PARTIDA
 	std::cout << "PLAY \n";
@@ -126,7 +126,7 @@ void JuegoPG::run(){
 	SDL_Delay(1000);
 	//std::cin.get();
 
-}
+}*/
 
 
 bool JuegoPG::initSDL() {
@@ -178,18 +178,18 @@ void JuegoPG::closeSDL() {
 	SDL_Quit();
 }
 
-bool JuegoPG::initGlobos(){
+/*bool JuegoPG::initGlobos(){
 	int x = rand() % 2; // entre 0 y 1
-	//globos.emplace_back(new Globo(this, TGlobo, /*rand() % 700, rand() % 700*/alto / 2, ancho / 2)); //evaluacion1
+	//globos.emplace_back(new Globo(this, TGlobo, //rand() % 700, rand() % 700 alto / 2, ancho / 2)); //evaluacion1
 
-	/*
-	for (int i = 0; i < numglobos; i++) { // aleatorio punto 2
-		if (x == 0)
-		  globos.emplace_back(new Globo(this, TGlobo, rand() % 700, rand() % 700)); 
-		else 
-	      globos.emplace_back(new GloboA(this, TGlobo, rand() % 700, rand() % 700));
-	}
-	*/
+	
+	//for (int i = 0; i < numglobos; i++) { // aleatorio punto 2
+		//if (x == 0)
+		//  globos.emplace_back(new Globo(this, TGlobo, rand() % 700, rand() % 700)); 
+		//else 
+	    //  globos.emplace_back(new GloboA(this, TGlobo, rand() % 700, rand() % 700));
+	//}
+	
 	globos.emplace_back(new Globo(this, TGlobo, rand() % 700, rand() % 700));
 	globos.emplace_back(new Globo(this, TGlobo, rand() % 700, rand() % 700));
 	globos.emplace_back(new GloboA(this, TGlobo, rand() % 700, rand() % 700));
@@ -204,9 +204,9 @@ bool JuegoPG::initGlobos(){
 
 
 	return true;
-}
+}*/
 
-void JuegoPG::freeGlobos(){
+/*void JuegoPG::freeGlobos(){
 	// lo mismo que en las texturas, borramos los globos y hacemos nulo el puntero
 	// en la práctica 2, este array no sólo tiene globos, asi que con el método son destruidos 
 	// todos los objetos
@@ -221,7 +221,7 @@ void JuegoPG::freeGlobos(){
 		globos[i] = nullptr;
 
 	}
-}
+}*/
 
 
 void JuegoPG::render()const{
@@ -238,7 +238,7 @@ void JuegoPG::render()const{
 }
 
 
-void JuegoPG::onClick(int pmx, int pmy){ //se guardan las posiciones que pasan por parámetro
+/*void JuegoPG::onClick(int pmx, int pmy){ //se guardan las posiciones que pasan por parámetro
 	mx = pmx;
 	my = pmy;
 
@@ -251,7 +251,7 @@ void JuegoPG::onClick(int pmx, int pmy){ //se guardan las posiciones que pasan p
 		}
 		n--;
 	}
-}
+}*/
 
 void JuegoPG::update(){ //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
 	if (finglobos != 0){
@@ -284,7 +284,9 @@ bool JuegoPG::handle_event(){ //eventos del teclado y ratón
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
 			if (e.button.button == SDL_BUTTON_LEFT) {
 				std::cout <<puntos << " CLICK \n";
-				onClick(e.button.x, e.button.y);
+				//onClick(e.button.x, e.button.y);
+				mx = e.button.x;
+				my = e.button.y;
 			}
 		}
 	}

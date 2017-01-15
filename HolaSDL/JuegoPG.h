@@ -4,13 +4,15 @@
 #include "ObjetoJuego.h"
 #include <SDL.h>
 #include "texturasSDL.h"
+#include "EstadoJuego.h"
+#include <stack>
 
 class JuegoPG
 {
 public:
 	JuegoPG();
 	~JuegoPG();
-	void run();
+	//void run();
 
 
 	enum Texturas_t {TFondo, TGlobo, TMariposa, TPremio};
@@ -19,11 +21,16 @@ public:
 	texturasSDL* getTextura(Texturas_t et) const { return texturas[et]; }
 	SDL_Renderer* getRender() const;
 	void getMousePos(int & mpx, int & mpy) const; 
-	void newBaja(ObjetoJuego* po); 
-	void newPuntos(ObjetoJuego* po); 
-	void newPremio(); 
+	//void newBaja(ObjetoJuego* po); 
+	//void newPuntos(ObjetoJuego* po); 
+	//void newPremio(); 
 	void initMedia(); 
 	void freeMedia();
+	
+	void changeState(EstadoJuego* newSt);
+	void pushState(EstadoJuego* newState);
+	void popState();
+	void setSalir();
 
 
 private:
@@ -33,7 +40,7 @@ private:
 
 	std::string ntexturas[4];
 
-	std::vector<ObjetoJuego*> globos;
+	//std::vector<ObjetoJuego*> globos;//no solo globos tambien premio...
 
 	std::vector<texturasSDL*> texturas;
 
@@ -50,12 +57,12 @@ private:
 
 	int puntos;
 
-	int numglobos;
-	int numglobosA;
-	int finglobos;
+	//int numglobos;
+	//int numglobosA;
+	//int finglobos;
 
 	bool error;
-	bool gameOver;
+	//bool gameOver;
 	bool exit;
 	bool espera;//evaluacion1
 
@@ -63,11 +70,14 @@ private:
 
 	bool initSDL();
 	void closeSDL();
-	bool initGlobos();
-	void freeGlobos();
+	//bool initGlobos();
+	//void freeGlobos();
 	void render() const;
 	void onClick(int pmx, int pmy);
 	void update();
 	bool handle_event();
 	void onExit();
+
+	EstadoJuego* topEstado();
+	std::stack<EstadoJuego*> Estados; 
 };

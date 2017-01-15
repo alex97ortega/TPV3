@@ -5,13 +5,16 @@
 class EstadoPG : public EstadoJuego
 {
 public:
-	EstadoPG();
+	EstadoPG(JuegoPG * juego);
 	~EstadoPG();
+	void draw();
+	void update();
+	void onClick();
 
 protected:
 
 	JuegoPG* ptajuego;
-	//vector de objetos, ...
-	//implementa utilidades para las subclases(MenuP, PlayPG, GameOver y Pausa)
+	
+	std::vector <ObjetoJuego*> objetos;
 };
 

@@ -11,7 +11,6 @@ public:
 	void update(); // solo cambia el método update de los globos nuevos 
 private:
 
-
 	bool visible;
 	bool explotado;
 

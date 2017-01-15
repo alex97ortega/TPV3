@@ -6,10 +6,10 @@ class Globo : public ObjetoPG
 public:
 	Globo(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y);
 	~Globo();
-	virtual void draw();
+	void draw();
 	bool onClick();
 	void update();
-	virtual int damePuntos(); // virtual para ejercicios
+	int damePuntos(); // virtual para ejercicios
 
 private:
 
