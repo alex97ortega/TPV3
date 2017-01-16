@@ -1,4 +1,5 @@
 #include "Globo.h"
+#include "PlayPG.h"
 
 
 Globo::Globo(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y)
@@ -40,8 +41,11 @@ bool Globo::onClick(){ //captura la posicion donde se ha pinchado y ve si coinci
 	if (visible && !explotado){
 		if (dentro(mx, my)){
 			explotado = true;
-			juegootp->newBaja(this);
-			juegootp->newPuntos(this);
+			dynamic_cast<PlayPG*>(this)->newBaja(this);
+			dynamic_cast<PlayPG*>(this)->newPuntos(this);
+
+			//juegootp->newBaja(this);
+			//juegootp->newPuntos(this);
 		}
 		return (dentro(mx, my));
 	}
@@ -66,7 +70,9 @@ void Globo::update(){
 		if (ancho <= 10){
 			explotado = true;
 			visible = false;
-			juegootp->newBaja(this);
+			dynamic_cast<PlayPG*>(this)->newBaja(this);
+
+			//juegootp->newBaja(this);
 		}
 	}
 }

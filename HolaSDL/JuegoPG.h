@@ -72,7 +72,7 @@ private:
 	void closeSDL();
 	//bool initGlobos();
 	//void freeGlobos();
-	void render() const;
+	void render(); //const
 	void onClick(int pmx, int pmy);
 	void update();
 	bool handle_event();
@@ -80,4 +80,6 @@ private:
 
 	EstadoJuego* topEstado();
 	std::stack<EstadoJuego*> Estados; 
+
+	EstadoJuego * ptestados;
 };

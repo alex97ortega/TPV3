@@ -1,4 +1,5 @@
 #include "GloboA.h"
+#include "PlayPG.h"
 
 
 GloboA::GloboA(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y) : Globo(juego, text, x, y)
@@ -29,7 +30,9 @@ void GloboA::update(){
 		if (ancho <= 10){
 			explotado = true;
 			visible = false;
-			juegootp->newBaja(this);
+			dynamic_cast<PlayPG*>(this)->newBaja(this);
+
+			//juegootp->newBaja(this);
 		}
 	}
 }

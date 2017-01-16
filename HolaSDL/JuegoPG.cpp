@@ -4,6 +4,7 @@
 #include "Mariposa.h"
 #include "Premio.h"
 #include "SDLError.h"
+#include "PlayPG.h"
 #include <iostream>
 #include <typeinfo>
 #include <vector>
@@ -24,9 +25,10 @@ JuegoPG::JuegoPG()
 	/*numglobos = 3; // evaluacion 
 	numglobosA = 3;
 	finglobos = 7;
-
+	
 	error = false;
 	gameOver = false;*/
+	ptestados = new PlayPG(this);
 	exit = false;
 	espera = false;
 
@@ -224,7 +226,7 @@ void JuegoPG::closeSDL() {
 }*/
 
 
-void JuegoPG::render()const{
+void JuegoPG::render(){ //const
 	//limpiamos el render
 	SDL_RenderClear(pRender);
 
@@ -232,14 +234,18 @@ void JuegoPG::render()const{
 	texturas[0]->draw(pRender, nullptr, nullptr);
 
 	//globos, mariposa y premio
-	for (int i = 0; i < globos.size(); i++)
-		globos[i]->draw();
+	/*for (int i = 0; i < globos.size(); i++)
+		globos[i]->draw();*/
+	topEstado()->draw();
 	SDL_RenderPresent(pRender);
 }
 
 
-/*void JuegoPG::onClick(int pmx, int pmy){ //se guardan las posiciones que pasan por parámetro
-	mx = pmx;
+void JuegoPG::onClick(int pmx, int pmy){ //se guardan las posiciones que pasan por parámetro
+	mx = e.button.x;
+	my = e.button.y;
+	topEstado()->onClick();
+	/*mx = pmx;
 	my = pmy;
 
 	bool pinchado = false;
@@ -250,17 +256,18 @@ void JuegoPG::render()const{
 			pinchado = true;
 		}
 		n--;
-	}
-}*/
+	}*/
+}
 
 void JuegoPG::update(){ //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
-	if (finglobos != 0){
+	/*if (finglobos != 0){
 		for (int i = 0; i < globos.size(); i++){
 			globos[i]->update();
 		}
 	}
 	else 
-		gameOver = true;
+		gameOver = true;*/
+	topEstado()->update();
 }
 
 
@@ -285,11 +292,39 @@ bool JuegoPG::handle_event(){ //eventos del teclado y ratón
 			if (e.button.button == SDL_BUTTON_LEFT) {
 				std::cout <<puntos << " CLICK \n";
 				//onClick(e.button.x, e.button.y);
-				mx = e.button.x;
-				my = e.button.y;
+				
 			}
 		}
 	}
 
 	return espera;
+}
+
+
+EstadoJuego * JuegoPG::topEstado(){
+	return Estados.top();
+}
+
+void JuegoPG::changeState(EstadoJuego* newSt){
+	/*if (newSt != pause){
+		popState();
+		pushState(newSt);
+	}
+	else*/
+		pushState(newSt);
+}
+
+
+void JuegoPG::pushState(EstadoJuego* newState){
+	Estados.push(newState);
+}
+
+
+void JuegoPG::popState(){
+	Estados.pop();
+}
+
+
+void JuegoPG::setSalir(){
+	closeSDL();
 }

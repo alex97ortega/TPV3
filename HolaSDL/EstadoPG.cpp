@@ -3,7 +3,7 @@
 
 EstadoPG::EstadoPG(JuegoPG * juego)
 {
-	ptajuego = juego;
+	ptsjuego = juego;
 
 }
 
@@ -13,6 +13,7 @@ EstadoPG::~EstadoPG()
 }
 
 void EstadoPG::draw(){
+	
 	for (int i = 0; i < objetos.size() - 1; i++){
 		objetos[i]->draw();
 	}

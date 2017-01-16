@@ -13,7 +13,7 @@ public:
 
 protected:
 
-	JuegoPG* ptajuego;
+	JuegoPG* ptsjuego;
 	
 	std::vector <ObjetoJuego*> objetos;
 };

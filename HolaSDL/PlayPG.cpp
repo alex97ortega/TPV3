@@ -12,6 +12,7 @@ PlayPG::PlayPG(JuegoPG * juego) : EstadoPG(juego) //el juego por parametro se lo
 	gameOver = false;
 	puntos = 0;
 
+
 }
 
 
