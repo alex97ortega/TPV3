@@ -4,7 +4,7 @@
 #include "Premio.h"
 #include "Mariposa.h"
 
-PlayPG::PlayPG(JuegoPG * juego) : EstadoPG(juego) //el juego por parametro se lo pasas a la constructora que hemos declarado para que se lo pusiera a ptajuego(no es necesario hacerlo aqui)
+PlayPG::PlayPG(JuegoPG * juego) : EstadoPG(juego) //el juego por parametro se lo pasas a la constructora que hemos declarado para que se lo pusiera a ptsjuego(no es necesario hacerlo aqui)
 {
 	numglobos = 3;
 	numglobosA = 3;
@@ -25,7 +25,7 @@ void PlayPG::newBaja(ObjetoJuego* po){
 
 void PlayPG::newPuntos(ObjetoJuego* po){
 	points += static_cast<ObjetoPG*>(po)->damePuntos();//llamar a puntos de juegoPG
-	JuegoPG::obtenerP(points);
+    
 }
 
 void PlayPG::newPremio(){
@@ -85,4 +85,8 @@ void PlayPG::update(){
 	}
 	else
 		EstadoPG::update();
+}
+
+int PlayPG::dameP(){
+	return points;
 }

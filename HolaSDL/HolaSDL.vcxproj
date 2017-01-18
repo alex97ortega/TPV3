@@ -69,6 +69,7 @@
     <ClCompile Include="Boton.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="EstadoPG.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Globo.cpp" />
     <ClCompile Include="GloboA.cpp" />
     <ClCompile Include="JuegoPG.cpp" />
@@ -76,6 +77,7 @@
     <ClCompile Include="Mariposa.cpp" />
     <ClCompile Include="MenuPG.cpp" />
     <ClCompile Include="ObjetoPG.cpp" />
+    <ClCompile Include="Pausa.cpp" />
     <ClCompile Include="PlayPG.cpp" />
     <ClCompile Include="Premio.cpp" />
     <ClCompile Include="SDLError.cpp" />
@@ -87,6 +89,7 @@
     <ClInclude Include="Error.h" />
     <ClInclude Include="EstadoJuego.h" />
     <ClInclude Include="EstadoPG.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="Globo.h" />
     <ClInclude Include="GloboA.h" />
     <ClInclude Include="JuegoPG.h" />
@@ -94,6 +97,7 @@
     <ClInclude Include="MenuPG.h" />
     <ClInclude Include="ObjetoJuego.h" />
     <ClInclude Include="ObjetoPG.h" />
+    <ClInclude Include="Pausa.h" />
     <ClInclude Include="PlayPG.h" />
     <ClInclude Include="Premio.h" />
     <ClInclude Include="SDLError.h" />

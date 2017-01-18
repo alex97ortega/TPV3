@@ -12,6 +12,7 @@ public:
 	void newPuntos(ObjetoJuego* po); 
 	void newPremio(); 
 	void update();
+	int dameP();
 
 private:
 	int numglobos;

@@ -32,7 +32,7 @@ bool Boton::onClick(){
 	juegootp->getMousePos(mpbx, mpby);
 
 	if (dentro(mpbx, mpby)){
-
+		cb(juegootp);
 	}
 	else
 		return(dentro(mpbx, mpby));

@@ -35,7 +35,7 @@ public:
 	void pushState(EstadoJuego* newState);
 	void popState();
 	void setSalir();
-	void obtenerP(int p);
+	
 
 private:
 

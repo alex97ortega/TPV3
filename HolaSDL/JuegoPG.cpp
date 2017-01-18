@@ -295,6 +295,7 @@ bool JuegoPG::handle_event(){ //eventos del teclado y ratón
 		}
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
 			if (e.button.button == SDL_BUTTON_LEFT) {
+				//puntos = static_cast<PlayPG*>(ptestados)->dameP(); es otro puntero, a saber cual, ya si eso ya...
 				std::cout <<puntos << " CLICK \n";
 				onClick(e.button.x, e.button.y);
 				
@@ -335,6 +336,3 @@ void JuegoPG::setSalir(){
 	closeSDL();
 }
 
-void JuegoPG::obtenerP(int p){
-	puntos = p;
-}
