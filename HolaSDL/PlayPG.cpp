@@ -3,18 +3,21 @@
 #include "GloboA.h"
 #include "Premio.h"
 #include "Mariposa.h"
+#include "GameOver.h"
 
-PlayPG::PlayPG(JuegoPG * juego) : EstadoPG(juego) //el juego por parametro se lo pasas a la constructora que hemos declarado para que se lo pusiera a ptsjuego(no es necesario hacerlo aqui)
+PlayPG::PlayPG(JuegoPG * juego) : EstadoPG(juego) 
 {
 	numglobos = 3;
 	numglobosA = 3;
 	finglobos = 6;
+	points = 0;
 	initGlobos();
 }
 
 
 PlayPG::~PlayPG()
 {
+	ptsjuego->darPuntos(points);
 	freeGlobos();
 }
 
@@ -24,8 +27,9 @@ void PlayPG::newBaja(ObjetoJuego* po){
 }
 
 void PlayPG::newPuntos(ObjetoJuego* po){
-	points += static_cast<ObjetoPG*>(po)->damePuntos();//llamar a puntos de juegoPG
-    
+
+	points += static_cast<ObjetoPG*>(po)->damePuntos();
+	
 }
 
 void PlayPG::newPremio(){
@@ -36,22 +40,18 @@ void PlayPG::newPremio(){
 
 
 bool PlayPG::initGlobos(){
-	int x = rand() % 2; // entre 0 y 1
+	
 	//globos.emplace_back(new Globo(this, TGlobo, /*rand() % 700, rand() % 700*/alto / 2, ancho / 2)); //evaluacion1
 
 	
 	for (int i = 0; i < numglobos + numglobosA; i++) { // aleatorio punto 2
-		if (x == 0)
+		//int x = rand() % 2; // entre 0 y 1
+		//if (x == 0)
 			objetos.emplace_back(new Globo(ptsjuego, JuegoPG::TGlobo, rand() % 700, rand() % 700));
-		else
-			objetos.emplace_back(new GloboA(ptsjuego, JuegoPG::TGlobo, rand() % 700, rand() % 700));
+		//else
+			//objetos.emplace_back(new GloboA(ptsjuego, JuegoPG::TGlobo, rand() % 700, rand() % 700));
 	}
 	
-	/*globos.emplace_back(new Globo(this, TGlobo, rand() % 700, rand() % 700));
-	globos.emplace_back(new Globo(this, TGlobo, rand() % 700, rand() % 700));
-	globos.emplace_back(new GloboA(this, TGlobo, rand() % 700, rand() % 700));
-	globos.emplace_back(new GloboA(this, TGlobo, rand() % 700, rand() % 700));// punto 3 dos de cada tipo*/
-
 	objetos.emplace_back(new Premio(ptsjuego, JuegoPG::TPremio, rand() % 700, rand() % 700));
 
 	objetos.emplace_back(new Mariposa(ptsjuego, JuegoPG::TMariposa, rand() % 700, rand() % 700));
@@ -80,13 +80,13 @@ void PlayPG::freeGlobos(){
 }
 
 void PlayPG::update(){
+
 	if (finglobos == 0){
-		ptsjuego->setSalir();//real changestate
+		
+		ptsjuego->changeState(new GameOver(ptsjuego));
+		
 	}
 	else
 		EstadoPG::update();
 }
 
-int PlayPG::dameP(){
-	return points;
-}

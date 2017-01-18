@@ -5,6 +5,8 @@
 #include "Premio.h"
 #include "SDLError.h"
 #include "PlayPG.h"
+#include "Pausa.h"
+#include "MenuPG.h"
 #include <iostream>
 #include <typeinfo>
 #include <vector>
@@ -19,25 +21,24 @@ JuegoPG::JuegoPG()
 	ntexturas[1] = "../bmps/globo.png";
 	ntexturas[2] = "../bmps/mariposa.png";
 	ntexturas[3] = "../bmps/premio.png";
-	ntexturas[4] = "../bmps/button.png";
+	ntexturas[4] = "../bmps/buttonContinuar.png";
+	ntexturas[5] = "../bmps/buttonJugar.png";
+	ntexturas[6] = "../bmps/buttonMenu.png";
+	ntexturas[7] = "../bmps/buttonSalir.png";
+	ntexturas[8] = "../bmps/buttonScore.png";
 
 	srand(SDL_GetTicks());
 
-	/*numglobos = 3; // evaluacion 
-	numglobosA = 3;
-	finglobos = 7;
-	
-	error = false;*/
 	gameOver = false;
 	
 	exit = false;
 	espera = false;
+	puntos = 0;
 
 	initSDL();
 	initMedia();
-	//initGlobos();
 
-	Estados.push(new PlayPG(this));
+	Estados.push(new MenuPG(this));
 
 }
 
@@ -45,10 +46,12 @@ JuegoPG::JuegoPG()
 JuegoPG::~JuegoPG()
 {
 	freeMedia();
-	//freeGlobos();
 	closeSDL();
 	pWin = nullptr;
 	pRender = nullptr;
+	while (!Estados.empty()){
+		popState();
+	}
 }
 
 SDL_Renderer* JuegoPG::getRender()const{
@@ -60,21 +63,6 @@ void JuegoPG::getMousePos(int & mpx, int & mpy) const{ //obtener posicion del mo
 	mpy = my;
 }
 
-/*void JuegoPG::newBaja(ObjetoJuego* po){//cada vez que se rompe un globo 
-	finglobos--;
-}
-
-void JuegoPG::newPuntos(ObjetoJuego* po){// los puntos tanto de globos como de premio
-	if (typeid(*po) == typeid(Globo))
-		puntos += dynamic_cast<Globo*>(po)->damePuntos();
-	if (typeid(*po) == typeid(Premio))
-		puntos += dynamic_cast<Premio*>(po)->damePuntos();
-}
-
-void JuegoPG::newPremio(){//llamamos al reinicia 
-	dynamic_cast<Premio*>(globos[4])->reiniciaPremio();
-
-}*/
 
 void JuegoPG::initMedia(){
 
@@ -93,6 +81,19 @@ void JuegoPG::initMedia(){
 
 		texturas.emplace_back(new texturasSDL);
 		texturas[4]->load(getRender(), ntexturas[4]);
+
+		texturas.emplace_back(new texturasSDL);
+		texturas[5]->load(getRender(), ntexturas[5]);
+
+		texturas.emplace_back(new texturasSDL);
+		texturas[6]->load(getRender(), ntexturas[6]);
+
+		texturas.emplace_back(new texturasSDL);
+		texturas[7]->load(getRender(), ntexturas[7]);
+
+		texturas.emplace_back(new texturasSDL);
+		texturas[8]->load(getRender(), ntexturas[8]);
+
 }
 
 void JuegoPG::freeMedia(){
@@ -108,7 +109,7 @@ void JuegoPG::freeMedia(){
 
 void JuegoPG::run(){ 
 
-	Uint32 MSxUpdate = 500; // VELOCIDAD DE LA PARTIDA
+	Uint32 MSxUpdate = 500;
 	std::cout << "PLAY \n";
 	Uint32 lastUpdate = SDL_GetTicks();
 	render();
@@ -185,50 +186,6 @@ void JuegoPG::closeSDL() {
 	SDL_Quit();
 }
 
-/*bool JuegoPG::initGlobos(){
-	int x = rand() % 2; // entre 0 y 1
-	//globos.emplace_back(new Globo(this, TGlobo, //rand() % 700, rand() % 700 alto / 2, ancho / 2)); //evaluacion1
-
-	
-	//for (int i = 0; i < numglobos; i++) { // aleatorio punto 2
-		//if (x == 0)
-		//  globos.emplace_back(new Globo(this, TGlobo, rand() % 700, rand() % 700)); 
-		//else 
-	    //  globos.emplace_back(new GloboA(this, TGlobo, rand() % 700, rand() % 700));
-	//}
-	
-	globos.emplace_back(new Globo(this, TGlobo, rand() % 700, rand() % 700));
-	globos.emplace_back(new Globo(this, TGlobo, rand() % 700, rand() % 700));
-	globos.emplace_back(new GloboA(this, TGlobo, rand() % 700, rand() % 700));
-	globos.emplace_back(new GloboA(this, TGlobo, rand() % 700, rand() % 700));// punto 3 dos de cada tipo
-	
-	globos.emplace_back(new Premio(this, TPremio, rand() % 700, rand() % 700));
-	//globos.emplace_back(new Premio(this, TPremio, rand() % 700, rand() % 700));
-
-	globos.emplace_back(new Mariposa(this, TMariposa, rand() % 700, rand() % 700));
-	globos.emplace_back(new Mariposa(this, TMariposa, rand() % 700, rand() % 700));
-
-
-
-	return true;
-}*/
-
-/*void JuegoPG::freeGlobos(){
-	// lo mismo que en las texturas, borramos los globos y hacemos nulo el puntero
-	// en la práctica 2, este array no sólo tiene globos, asi que con el método son destruidos 
-	// todos los objetos
-	
-	for (int i = 0; i < globos.size(); i++){
-		delete globos[i];
-		globos[i] = nullptr;
-
-	}
-	for (int i = 0; i < globos.size(); i++){
-		delete globos[i];
-		globos[i] = nullptr;
-
-	}
-}*/
 
 
 void JuegoPG::render(){ //const
@@ -238,9 +195,6 @@ void JuegoPG::render(){ //const
 	//fondo
 	texturas[0]->draw(pRender, nullptr, nullptr);
 
-	//globos, mariposa y premio
-	/*for (int i = 0; i < globos.size(); i++)
-		globos[i]->draw();*/
 	topEstado()->draw();
 	SDL_RenderPresent(pRender);
 }
@@ -250,28 +204,10 @@ void JuegoPG::onClick(int pmx, int pmy){ //se guardan las posiciones que pasan p
 	mx = e.button.x;
 	my = e.button.y;
 	topEstado()->onClick();
-	/*mx = pmx;
-	my = pmy;
-
-	bool pinchado = false;
-	int i = 0;
-	int n = globos.size() - 1;
-	while (!pinchado && i <= n){//evaluacion 1
-		if (globos[n]->onClick()){
-			pinchado = true;
-		}
-		n--;
-	}*/
 }
 
 void JuegoPG::update(){ //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
-	/*if (finglobos != 0){
-		for (int i = 0; i < globos.size(); i++){
-			globos[i]->update();
-		}
-	}
-	else 
-		gameOver = true;*/
+	
 	topEstado()->update();
 }
 
@@ -282,20 +218,14 @@ bool JuegoPG::handle_event(){ //eventos del teclado y ratón
 			exit = true;
 			std::cout << "QUIT";
 		}
-		else if (e.type == SDL_KEYUP){//evaluacion1 (p para pausar)
-			if (e.key.keysym.sym = SDLK_p && !espera){
-				espera = true;
+		else if (e.type == SDL_KEYUP){
+			if (e.key.keysym.sym = SDLK_ESCAPE){
+				pushState(new Pausa(this));
 				std::cout << "PAUSE \n";
 			}
-			else if (e.key.keysym.sym = SDLK_p && espera){
-				espera = false;
-				std::cout << "CONTINUE \n";
-			}
-
 		}
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
 			if (e.button.button == SDL_BUTTON_LEFT) {
-				//puntos = static_cast<PlayPG*>(ptestados)->dameP(); es otro puntero, a saber cual, ya si eso ya...
 				std::cout <<puntos << " CLICK \n";
 				onClick(e.button.x, e.button.y);
 				
@@ -312,11 +242,7 @@ EstadoJuego * JuegoPG::topEstado(){
 }
 
 void JuegoPG::changeState(EstadoJuego* newSt){
-	/*if (newSt != pause){
 		popState();
-		pushState(newSt);
-	}
-	else*/
 		pushState(newSt);
 }
 
@@ -333,6 +259,15 @@ void JuegoPG::popState(){
 
 
 void JuegoPG::setSalir(){
+	exit = true;
 	closeSDL();
+	
 }
 
+void JuegoPG::darPuntos(int i){
+	puntos = i;
+}
+
+int JuegoPG::damePuntos(){
+	return puntos;
+}

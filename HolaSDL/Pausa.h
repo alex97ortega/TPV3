@@ -8,11 +8,8 @@ public:
 	Pausa(JuegoPG * juego);
 	~Pausa();
 
+private:
 	static void resume(JuegoPG * jg);
 	static void menu(JuegoPG * jg);
-
-private:
-	Boton* bResume;
-	Boton* bMenu;
 };
 

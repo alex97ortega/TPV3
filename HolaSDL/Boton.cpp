@@ -8,6 +8,9 @@ Boton::Boton(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y, CallBack_t 
 	pimgx = x;
 	pimgy = y;
 
+	alto = 100;
+	ancho = 200;
+
 	Ttextura = text;
 
 	cb = cbCons;
@@ -19,6 +22,7 @@ Boton::~Boton()
 }
 
 void Boton::draw(){
+
 	rectb.h = alto;
 	rectb.w = ancho;
 	rectb.x = pimgx;
@@ -33,7 +37,15 @@ bool Boton::onClick(){
 
 	if (dentro(mpbx, mpby)){
 		cb(juegootp);
+		return true;
 	}
 	else
-		return(dentro(mpbx, mpby));
+	{
+
+		return false;
+	}
+	
+}
+
+void Boton::update(){
 }

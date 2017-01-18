@@ -16,8 +16,6 @@ private:
 	int mx;
 	int my;
 
-	int puntos = 200;
-
 	int cont = 3;
 
 	bool visible;

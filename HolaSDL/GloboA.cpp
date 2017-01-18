@@ -32,7 +32,6 @@ void GloboA::update(){
 			visible = false;
 			dynamic_cast<PlayPG*>(juegootp->topEstado())->newBaja(this);
 
-			//juegootp->newBaja(this);
 		}
 	}
 }

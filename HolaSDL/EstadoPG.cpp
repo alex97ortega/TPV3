@@ -23,7 +23,7 @@ void EstadoPG::onClick(){
 	bool clickeado = false; //igual que en juegoPG
 
 	int i = objetos.size() - 1;
-	while (i >= 0 && !clickeado)
+	while (!clickeado && i >= 0)
 	{
 		if (objetos[i]->onClick())
 			clickeado = true;

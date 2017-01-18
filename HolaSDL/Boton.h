@@ -9,7 +9,7 @@ public:
 	~Boton();
 	void draw();
 	bool onClick();
-	//void update() la mejora del boton
+	void update(); 
 
 
 protected:

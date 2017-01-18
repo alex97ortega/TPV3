@@ -23,7 +23,6 @@ private:
 
 	SDL_Rect rect;
 
-	int puntos = 1;
 
 	//constantes del juego
 	static const int PVIS = 70;
