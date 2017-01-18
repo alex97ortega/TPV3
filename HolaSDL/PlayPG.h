@@ -7,19 +7,18 @@ public:
 	PlayPG(JuegoPG * juego);
 	~PlayPG();
 
-	void run();
+
 	void newBaja(ObjetoJuego* po); 
 	void newPuntos(ObjetoJuego* po); 
 	void newPremio(); 
-	
+	void update();
 
 private:
 	int numglobos;
 	int numglobosA;
 	int finglobos;
-	int puntos;
-	bool gameOver;
 	bool initGlobos();
 	void freeGlobos();
+	int points = 0;
 };
 

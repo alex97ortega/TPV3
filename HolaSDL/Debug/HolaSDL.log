@@ -1,38 +1,43 @@
-﻿Compilación iniciada a las 16/01/2017 12:07:48.
+﻿Compilación iniciada a las 18/01/2017 11:42:02.
      1>Proyecto "D:\C++\practica3\TPV3\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GameOver.cpp JuegoPG.cpp Mariposa.cpp MenuPG.cpp Pausa.cpp PlayPG.cpp Premio.cpp main.cpp
-         main.cpp
-     1>d:\c++\practica3\tpv3\holasdl\main.cpp(18): error C2039: 'run' : no es un miembro de 'JuegoPG'
-                 d:\c++\practica3\tpv3\holasdl\juegopg.h(11) : vea la declaración de 'JuegoPG'
-         Premio.cpp
-     1>d:\c++\practica3\tpv3\holasdl\premio.cpp(45): error C2039: 'newPuntos' : no es un miembro de 'JuegoPG'
-                 d:\c++\practica3\tpv3\holasdl\juegopg.h(11) : vea la declaración de 'JuegoPG'
-     1>d:\c++\practica3\tpv3\holasdl\premio.cpp(61): error C2039: 'newPuntos' : no es un miembro de 'JuegoPG'
-                 d:\c++\practica3\tpv3\holasdl\juegopg.h(11) : vea la declaración de 'JuegoPG'
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Boton.cpp EstadoPG.cpp Globo.cpp GloboA.cpp JuegoPG.cpp Mariposa.cpp ObjetoPG.cpp PlayPG.cpp Premio.cpp main.cpp
          PlayPG.cpp
-     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(47): warning C4551: la llamada a la función no tiene lista de argumentos
-     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(77): error C2065: 'ptajuego' : identificador no declarado
-     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(79): error C2065: 'ptajuego' : identificador no declarado
-     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(87): error C2065: 'ptajuego' : identificador no declarado
-     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(89): error C2065: 'ptajuego' : identificador no declarado
-     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(90): error C2065: 'ptajuego' : identificador no declarado
-     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(102): warning C4018: '<' : no coinciden signed/unsigned
-     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(107): warning C4018: '<' : no coinciden signed/unsigned
-         Pausa.cpp
-     1>d:\c++\practica3\tpv3\holasdl\pausa.cpp(5): error C2512: 'EstadoPG' : no hay disponible un constructor predeterminado adecuado
-         MenuPG.cpp
-     1>d:\c++\practica3\tpv3\holasdl\menupg.cpp(5): error C2512: 'EstadoPG' : no hay disponible un constructor predeterminado adecuado
-         Mariposa.cpp
-     1>d:\c++\practica3\tpv3\holasdl\mariposa.cpp(64): error C2039: 'newPremio' : no es un miembro de 'JuegoPG'
-                 d:\c++\practica3\tpv3\holasdl\juegopg.h(11) : vea la declaración de 'JuegoPG'
+     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(69): warning C4018: '<' : no coinciden signed/unsigned
+     1>d:\c++\practica3\tpv3\holasdl\playpg.cpp(74): warning C4018: '<' : no coinciden signed/unsigned
          JuegoPG.cpp
-     1>d:\c++\practica3\tpv3\holasdl\juegopg.cpp(95): warning C4018: '<' : no coinciden signed/unsigned
-         GameOver.cpp
-     1>d:\c++\practica3\tpv3\holasdl\gameover.cpp(5): error C2512: 'EstadoPG' : no hay disponible un constructor predeterminado adecuado
+     1>d:\c++\practica3\tpv3\holasdl\juegopg.cpp(96): warning C4018: '<' : no coinciden signed/unsigned
          Generando código...
-     1>Compilación del proyecto terminada "D:\C++\practica3\TPV3\HolaSDL\HolaSDL.vcxproj" (Build destinos) -- ERROR.
+         Compilando...
+         main.cpp
+         Premio.cpp
+         ObjetoPG.cpp
+         Mariposa.cpp
+         GloboA.cpp
+         Globo.cpp
+         EstadoPG.cpp
+     1>d:\c++\practica3\tpv3\holasdl\estadopg.cpp(16): warning C4018: '<' : no coinciden signed/unsigned
+     1>d:\c++\practica3\tpv3\holasdl\estadopg.cpp(38): warning C4018: '<' : no coinciden signed/unsigned
+         Boton.cpp
+         Generando código...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\C++\practica3\TPV3\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\C++\practica3\TPV3\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\C++\practica3\TPV3\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\Boton.obj
+         Debug\Error.obj
+         Debug\EstadoPG.obj
+         Debug\Globo.obj
+         Debug\GloboA.obj
+         Debug\JuegoPG.obj
+         Debug\main.obj
+         Debug\Mariposa.obj
+         Debug\ObjetoPG.obj
+         Debug\PlayPG.obj
+         Debug\Premio.obj
+         Debug\SDLError.obj
+         Debug\texturasError.obj
+         Debug\texturasSDL.obj
+         HolaSDL.vcxproj -> D:\C++\practica3\TPV3\bin\HolaSDLDebug.exe
+     1>Compilación del proyecto terminada "D:\C++\practica3\TPV3\HolaSDL\HolaSDL.vcxproj" (Build destinos).
 
-ERROR al compilar.
+Compilación correcta.
 
-Tiempo transcurrido 00:00:02.06
+Tiempo transcurrido 00:00:03.50

@@ -5,12 +5,19 @@ class Boton : public ObjetoPG
 {
 public:
 	typedef void CallBack_t(JuegoPG* jg);
+	Boton(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y, CallBack_t * cbCons);
+	~Boton();
+	void draw();
+	bool onClick();
+	//void update() la mejora del boton
+
 
 protected:
 	CallBack_t * cb;
 
-public:
-	Boton(CallBack_t * cbCons);
-	~Boton();
+	SDL_Rect rectb;
+
+	int mpbx;
+	int mpby;
 };
 

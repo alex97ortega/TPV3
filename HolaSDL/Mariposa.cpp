@@ -1,5 +1,6 @@
 #include "Mariposa.h"
 #include "Premio.h"
+#include "PlayPG.h"
 
 
 Mariposa::Mariposa(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y)
@@ -61,7 +62,7 @@ void Mariposa::update(){ //aquí localizamos el contador para que si se ha pincha
 	rectA.x = i;
 
 	if (cont == 3){
-		juegootp->newPremio();
+		dynamic_cast<PlayPG*>(juegootp->topEstado())->newPremio();
 		cont = 0;
 	}
 

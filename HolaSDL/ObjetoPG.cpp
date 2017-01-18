@@ -17,3 +17,7 @@ bool ObjetoPG::dentro(int x, int y) const{
 	return false;
 }
 
+int ObjetoPG::damePuntos(){
+	return puntos;
+}
+

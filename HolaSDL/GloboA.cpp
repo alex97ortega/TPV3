@@ -30,7 +30,7 @@ void GloboA::update(){
 		if (ancho <= 10){
 			explotado = true;
 			visible = false;
-			dynamic_cast<PlayPG*>(this)->newBaja(this);
+			dynamic_cast<PlayPG*>(juegootp->topEstado())->newBaja(this);
 
 			//juegootp->newBaja(this);
 		}

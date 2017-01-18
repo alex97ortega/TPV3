@@ -9,7 +9,6 @@ public:
 	void draw();
 	bool onClick();
 	void update();
-	int damePuntos();
 	void reiniciaPremio();
 
 private:

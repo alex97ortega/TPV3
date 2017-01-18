@@ -19,6 +19,7 @@ JuegoPG::JuegoPG()
 	ntexturas[1] = "../bmps/globo.png";
 	ntexturas[2] = "../bmps/mariposa.png";
 	ntexturas[3] = "../bmps/premio.png";
+	ntexturas[4] = "../bmps/button.png";
 
 	srand(SDL_GetTicks());
 
@@ -26,9 +27,9 @@ JuegoPG::JuegoPG()
 	numglobosA = 3;
 	finglobos = 7;
 	
-	error = false;
-	gameOver = false;*/
-	ptestados = new PlayPG(this);
+	error = false;*/
+	gameOver = false;
+	
 	exit = false;
 	espera = false;
 
@@ -36,6 +37,7 @@ JuegoPG::JuegoPG()
 	initMedia();
 	//initGlobos();
 
+	Estados.push(new PlayPG(this));
 
 }
 
@@ -88,6 +90,9 @@ void JuegoPG::initMedia(){
 
 		texturas.emplace_back(new texturasSDL);
 		texturas[3]->load(getRender(), ntexturas[3]);
+
+		texturas.emplace_back(new texturasSDL);
+		texturas[4]->load(getRender(), ntexturas[4]);
 }
 
 void JuegoPG::freeMedia(){
@@ -101,7 +106,7 @@ void JuegoPG::freeMedia(){
 
 
 
-/*void JuegoPG::run(){ 
+void JuegoPG::run(){ 
 
 	Uint32 MSxUpdate = 500; // VELOCIDAD DE LA PARTIDA
 	std::cout << "PLAY \n";
@@ -128,7 +133,7 @@ void JuegoPG::freeMedia(){
 	SDL_Delay(1000);
 	//std::cin.get();
 
-}*/
+}
 
 
 bool JuegoPG::initSDL() {
@@ -291,7 +296,7 @@ bool JuegoPG::handle_event(){ //eventos del teclado y ratón
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
 			if (e.button.button == SDL_BUTTON_LEFT) {
 				std::cout <<puntos << " CLICK \n";
-				//onClick(e.button.x, e.button.y);
+				onClick(e.button.x, e.button.y);
 				
 			}
 		}
@@ -321,10 +326,15 @@ void JuegoPG::pushState(EstadoJuego* newState){
 
 
 void JuegoPG::popState(){
+	delete Estados.top();
 	Estados.pop();
 }
 
 
 void JuegoPG::setSalir(){
 	closeSDL();
+}
+
+void JuegoPG::obtenerP(int p){
+	puntos = p;
 }

@@ -12,10 +12,10 @@ class JuegoPG
 public:
 	JuegoPG();
 	~JuegoPG();
-	//void run();
+	void run();
 
 
-	enum Texturas_t {TFondo, TGlobo, TMariposa, TPremio};
+	enum Texturas_t {TFondo, TGlobo, TMariposa, TPremio, TBoton};
 
 
 	texturasSDL* getTextura(Texturas_t et) const { return texturas[et]; }
@@ -26,19 +26,23 @@ public:
 	//void newPremio(); 
 	void initMedia(); 
 	void freeMedia();
-	
+
+	int puntos;
+
+
+	EstadoJuego* topEstado();
 	void changeState(EstadoJuego* newSt);
 	void pushState(EstadoJuego* newState);
 	void popState();
 	void setSalir();
-
+	void obtenerP(int p);
 
 private:
 
 	SDL_Window * pWin  = nullptr;
 	SDL_Renderer* pRender = nullptr;
 
-	std::string ntexturas[4];
+	std::string ntexturas[5];
 
 	//std::vector<ObjetoJuego*> globos;//no solo globos tambien premio...
 
@@ -55,14 +59,13 @@ private:
 
 	SDL_Color color;
 
-	int puntos;
 
 	//int numglobos;
 	//int numglobosA;
 	//int finglobos;
 
 	bool error;
-	//bool gameOver;
+	bool gameOver;
 	bool exit;
 	bool espera;//evaluacion1
 
@@ -78,7 +81,6 @@ private:
 	bool handle_event();
 	void onExit();
 
-	EstadoJuego* topEstado();
 	std::stack<EstadoJuego*> Estados; 
 
 	EstadoJuego * ptestados;

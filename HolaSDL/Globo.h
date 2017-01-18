@@ -9,7 +9,7 @@ public:
 	void draw();
 	bool onClick();
 	void update();
-	int damePuntos(); // virtual para ejercicios
+	
 
 private:
 

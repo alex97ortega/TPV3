@@ -1,5 +1,6 @@
 #include "Premio.h"
 #include "Mariposa.h"
+#include "PlayPG.h"
 
 
 Premio::Premio(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y)
@@ -42,7 +43,7 @@ bool Premio::onClick(){ // igual que el onclick de globos
 	juegootp->getMousePos(mx, my);
 	if (dentro(mx, my)){
 		visible = false;
-		juegootp->newPuntos(this);
+		dynamic_cast<PlayPG*>(juegootp->topEstado())->newPuntos(this);
 	}
 
 	return (dentro(mx, my));
@@ -58,7 +59,7 @@ void Premio::update(){
 		}
 		else{
 			visible = false;
-			juegootp->newPuntos(this);
+			dynamic_cast<PlayPG*>(juegootp->topEstado())->newPremio();
 		}
 	}
 	else if (cont == 0){
@@ -73,8 +74,4 @@ void Premio::reiniciaPremio(){
 	puntos = 200;
 	cont = 3;
 	visible = true;
-}
-
-int Premio::damePuntos(){
-	return  puntos;
 }
