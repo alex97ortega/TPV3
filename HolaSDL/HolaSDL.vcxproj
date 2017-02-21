@@ -67,8 +67,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Boton.cpp" />
+    <ClCompile Include="BouncingBall.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="EstadoPG.cpp" />
+    <ClCompile Include="FactoryPG.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Globo.cpp" />
     <ClCompile Include="GloboA.cpp" />
@@ -83,12 +85,16 @@
     <ClCompile Include="SDLError.cpp" />
     <ClCompile Include="texturasError.cpp" />
     <ClCompile Include="texturasSDL.cpp" />
+    <ClCompile Include="Vago.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Boton.h" />
+    <ClInclude Include="BouncingBall.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="EstadoJuego.h" />
     <ClInclude Include="EstadoPG.h" />
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="FactoryPG.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Globo.h" />
     <ClInclude Include="GloboA.h" />
@@ -103,6 +109,7 @@
     <ClInclude Include="SDLError.h" />
     <ClInclude Include="texturasError.h" />
     <ClInclude Include="texturasSDL.h" />
+    <ClInclude Include="Vago.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

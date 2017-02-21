@@ -4,6 +4,7 @@
 #include "Premio.h"
 #include "Mariposa.h"
 #include "GameOver.h"
+#include "BouncingBall.h"
 
 PlayPG::PlayPG(JuegoPG * juego) : EstadoPG(juego) 
 {
@@ -57,7 +58,7 @@ bool PlayPG::initGlobos(){
 	objetos.emplace_back(new Mariposa(ptsjuego, JuegoPG::TMariposa, rand() % 700, rand() % 700));
 	objetos.emplace_back(new Mariposa(ptsjuego, JuegoPG::TMariposa, rand() % 700, rand() % 700));
 
-
+	objetos.emplace_back(new BouncingBall(ptsjuego, JuegoPG::TBola, 350, 350));
 
 	return true;
 }

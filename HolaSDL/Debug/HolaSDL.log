@@ -1,30 +1,16 @@
-﻿Compilación iniciada a las 18/01/2017 22:58:34.
-     1>Proyecto "D:\C++\practica3.2\TPV3\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
+﻿Build started 21/02/2017 17:40:57.
+     1>Project "C:\hlocal\practica3TPV\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt JuegoPG.cpp
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt FactoryPG.cpp JuegoPG.cpp
          JuegoPG.cpp
-     1>d:\c++\practica3.2\tpv3\holasdl\juegopg.cpp(101): warning C4018: '<' : no coinciden signed/unsigned
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\C++\practica3.2\TPV3\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\C++\practica3.2\TPV3\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\C++\practica3.2\TPV3\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\Boton.obj
-         Debug\Error.obj
-         Debug\EstadoPG.obj
-         Debug\GameOver.obj
-         Debug\Globo.obj
-         Debug\GloboA.obj
-         Debug\JuegoPG.obj
-         Debug\main.obj
-         Debug\Mariposa.obj
-         Debug\MenuPG.obj
-         Debug\ObjetoPG.obj
-         Debug\Pausa.obj
-         Debug\PlayPG.obj
-         Debug\Premio.obj
-         Debug\SDLError.obj
-         Debug\texturasError.obj
-         Debug\texturasSDL.obj
-         HolaSDL.vcxproj -> D:\C++\practica3.2\TPV3\bin\HolaSDLDebug.exe
-     1>Compilación del proyecto terminada "D:\C++\practica3.2\TPV3\HolaSDL\HolaSDL.vcxproj" (Build destinos).
+     1>c:\hlocal\practica3tpv\holasdl\juegopg.cpp(105): warning C4018: '<' : signed/unsigned mismatch
+         FactoryPG.cpp
+         Generating Code...
+     1>c:\hlocal\practica3tpv\holasdl\factorypg.cpp(25): error C4716: 'Factory::createNormalElement' : must return a value
+     1>c:\hlocal\practica3tpv\holasdl\factorypg.cpp(32): error C4716: 'Factory::createSpecialElement' : must return a value
+     1>c:\hlocal\practica3tpv\holasdl\factorypg.cpp(37): error C4716: 'Factory::createPrizeElement' : must return a value
+     1>Done Building Project "C:\hlocal\practica3TPV\HolaSDL\HolaSDL.vcxproj" (Build target(s)) -- FAILED.
 
-Compilación correcta.
+Build FAILED.
 
-Tiempo transcurrido 00:00:00.60
+Time Elapsed 00:00:00.71

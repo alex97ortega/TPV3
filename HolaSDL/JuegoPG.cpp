@@ -26,6 +26,7 @@ JuegoPG::JuegoPG()
 	ntexturas[6] = "../bmps/buttonMenu.png";
 	ntexturas[7] = "../bmps/buttonSalir.png";
 	ntexturas[8] = "../bmps/buttonScore.png";
+	ntexturas[9] = "../bmps/bola.png";
 
 	srand(SDL_GetTicks());
 
@@ -93,6 +94,9 @@ void JuegoPG::initMedia(){
 
 		texturas.emplace_back(new texturasSDL);
 		texturas[8]->load(getRender(), ntexturas[8]);
+
+		texturas.emplace_back(new texturasSDL);
+		texturas[9]->load(getRender(), ntexturas[9]);
 
 }
 
