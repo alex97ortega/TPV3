@@ -11,7 +11,17 @@ class FactoryBola :
 	public Factory
 {
 public:
-	FactoryBola(JuegoPG * juego);
+	FactoryBola();
 	~FactoryBola();
+	virtual ObjetoJuego* createNormal(JuegoPG* juego, JuegoPG::Texturas_t text, int a, int b){
+		return new BouncingBall(juego,text, a, b);
+	}
+	virtual ObjetoJuego* createSpecial(JuegoPG* juego, JuegoPG::Texturas_t text, int a, int b) {
+		return new Vago();
+	}
+	virtual ObjetoJuego* createPrize(JuegoPG* juego, JuegoPG::Texturas_t text, int a, int b){
+		return new Vago();
+	}
+	
 };
 

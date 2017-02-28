@@ -6,9 +6,9 @@ class Vago :public ObjetoPG
 public:
 	Vago();
 	~Vago();
-	void draw();
-	bool onClick();
-	void update();
-	void reiniciaPremio();
+	void draw(){ ; }
+	bool onClick(){ return true; }
+	void update(){ ; }
+	void reiniciaPremio(){ ; }
 };
 

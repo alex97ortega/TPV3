@@ -1,16 +1,9 @@
-﻿Build started 21/02/2017 17:40:57.
-     1>Project "C:\hlocal\practica3TPV\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt FactoryPG.cpp JuegoPG.cpp
-         JuegoPG.cpp
-     1>c:\hlocal\practica3tpv\holasdl\juegopg.cpp(105): warning C4018: '<' : signed/unsigned mismatch
-         FactoryPG.cpp
-         Generating Code...
-     1>c:\hlocal\practica3tpv\holasdl\factorypg.cpp(25): error C4716: 'Factory::createNormalElement' : must return a value
-     1>c:\hlocal\practica3tpv\holasdl\factorypg.cpp(32): error C4716: 'Factory::createSpecialElement' : must return a value
-     1>c:\hlocal\practica3tpv\holasdl\factorypg.cpp(37): error C4716: 'Factory::createPrizeElement' : must return a value
-     1>Done Building Project "C:\hlocal\practica3TPV\HolaSDL\HolaSDL.vcxproj" (Build target(s)) -- FAILED.
+﻿Build started 28/02/2017 17:15:05.
+     1>Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         HolaSDL.vcxproj -> C:\hlocal\TPV3\bin\HolaSDLDebug.exe
+     1>Done Building Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.71
+Time Elapsed 00:00:00.03
