@@ -15,7 +15,7 @@ public:
 	void run();
 
 
-	enum Texturas_t {TFondo, TGlobo, TMariposa, TPremio, BContinuar, BJugar, BMenu, BSalir, BScore, TBola};
+	enum Texturas_t {TFondo, TGlobo, TMariposa, TPremio, BContinuar, BJugar, BMenu, BSalir, BScore, TBola, BBola};
 
 
 	texturasSDL* getTextura(Texturas_t et) const { return texturas[et]; }
@@ -41,7 +41,7 @@ private:
 	SDL_Window * pWin  = nullptr;
 	SDL_Renderer* pRender = nullptr;
 
-	std::string ntexturas[10];
+	std::string ntexturas[11];
 
 	int puntos;
 

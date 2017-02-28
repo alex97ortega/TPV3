@@ -70,6 +70,7 @@
     <ClCompile Include="BouncingBall.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="EstadoPG.cpp" />
+    <ClCompile Include="FactoryBola.cpp" />
     <ClCompile Include="FactoryPG.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Globo.cpp" />
@@ -94,6 +95,7 @@
     <ClInclude Include="EstadoJuego.h" />
     <ClInclude Include="EstadoPG.h" />
     <ClInclude Include="Factory.h" />
+    <ClInclude Include="FactoryBola.h" />
     <ClInclude Include="FactoryPG.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Globo.h" />

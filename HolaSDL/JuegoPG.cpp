@@ -15,7 +15,7 @@
 
 
 JuegoPG::JuegoPG()
-{  
+{
 	//array de ntexturas
 	ntexturas[0] = "../bmps/fondo.png";
 	ntexturas[1] = "../bmps/globo.png";
@@ -27,11 +27,13 @@ JuegoPG::JuegoPG()
 	ntexturas[7] = "../bmps/buttonSalir.png";
 	ntexturas[8] = "../bmps/buttonScore.png";
 	ntexturas[9] = "../bmps/bola.png";
+	ntexturas[10] = "../bmps/button.png";
+
 
 	srand(SDL_GetTicks());
 
 	gameOver = false;
-	
+
 	exit = false;
 	espera = false;
 	puntos = 0;
@@ -66,38 +68,11 @@ void JuegoPG::getMousePos(int & mpx, int & mpy) const{ //obtener posicion del mo
 
 
 void JuegoPG::initMedia(){
-
-	//cargar todo tipo de texturas
+	for (int i = 0; i < texturas.size(); i++){
+		//cargar todo tipo de texturas
 		texturas.emplace_back(new texturasSDL);
-		texturas[0]->load(getRender(), ntexturas[0]);
-
-		texturas.emplace_back(new texturasSDL);
-		texturas[1]->load(getRender(), ntexturas[1]);
-
-		texturas.emplace_back(new texturasSDL);
-		texturas[2]->load(getRender(), ntexturas[2]);
-
-		texturas.emplace_back(new texturasSDL);
-		texturas[3]->load(getRender(), ntexturas[3]);
-
-		texturas.emplace_back(new texturasSDL);
-		texturas[4]->load(getRender(), ntexturas[4]);
-
-		texturas.emplace_back(new texturasSDL);
-		texturas[5]->load(getRender(), ntexturas[5]);
-
-		texturas.emplace_back(new texturasSDL);
-		texturas[6]->load(getRender(), ntexturas[6]);
-
-		texturas.emplace_back(new texturasSDL);
-		texturas[7]->load(getRender(), ntexturas[7]);
-
-		texturas.emplace_back(new texturasSDL);
-		texturas[8]->load(getRender(), ntexturas[8]);
-
-		texturas.emplace_back(new texturasSDL);
-		texturas[9]->load(getRender(), ntexturas[9]);
-
+		texturas[i]->load(getRender(), ntexturas[i]);
+	}
 }
 
 void JuegoPG::freeMedia(){
@@ -111,7 +86,7 @@ void JuegoPG::freeMedia(){
 
 
 
-void JuegoPG::run(){ 
+void JuegoPG::run(){
 
 	Uint32 MSxUpdate = 500;
 	std::cout << "PLAY \n";
@@ -211,7 +186,7 @@ void JuegoPG::onClick(int pmx, int pmy){ //se guardan las posiciones que pasan p
 }
 
 void JuegoPG::update(){ //el juego corre mientras existan globos en el juego (aunque puede ser pausado)
-	
+
 	topEstado()->update();
 }
 
@@ -230,9 +205,9 @@ bool JuegoPG::handle_event(){ //eventos del teclado y ratón
 		}
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
 			if (e.button.button == SDL_BUTTON_LEFT) {
-				std::cout <<puntos << " CLICK \n";
+				std::cout << puntos << " CLICK \n";
 				onClick(e.button.x, e.button.y);
-				
+
 			}
 		}
 	}
@@ -246,8 +221,8 @@ EstadoJuego * JuegoPG::topEstado(){
 }
 
 void JuegoPG::changeState(EstadoJuego* newSt){
-		popState();
-		pushState(newSt);
+	popState();
+	pushState(newSt);
 }
 
 
@@ -265,7 +240,7 @@ void JuegoPG::popState(){
 void JuegoPG::setSalir(){
 	exit = true;
 	closeSDL();
-	
+
 }
 
 void JuegoPG::darPuntos(int i){

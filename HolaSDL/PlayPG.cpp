@@ -6,8 +6,12 @@
 #include "GameOver.h"
 #include "BouncingBall.h"
 
+#include <stdlib.h>
+#include <time.h>
+
 PlayPG::PlayPG(JuegoPG * juego) : EstadoPG(juego) 
 {
+	srand(time(NULL));
 	numglobos = 3;
 	numglobosA = 3;
 	finglobos = 6;

@@ -13,6 +13,7 @@ public:
 private:
 	static void salir(JuegoPG * jg);
 	static void play(JuegoPG * jg);
+	static void playBola(JuegoPG * jg);
 	
 
 };

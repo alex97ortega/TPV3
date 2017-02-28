@@ -1,12 +1,15 @@
 #include "FactoryPG.h"
 #include "Factory.h"
 #include "Globo.h"
+#include "Mariposa.h"
+#include "Premio.h"
+#include "Vago.h"
 
 
 
-FactoryPG::FactoryPG()
+FactoryPG::FactoryPG(JuegoPG * juego)
 {
-	
+	juegofact = juego;
 }
 
 
@@ -14,24 +17,19 @@ FactoryPG::~FactoryPG()
 {
 }
 
-ObjetoJuego*Factory::createNormalElement(char tipo)
+ObjetoJuego*FactoryPG::createNormalElement()
 {
-	if (tipo == 'G'){
-		//return new Globo(ptsjuego, JuegoPG::TGlobo, rand() % 700, rand() % 700);
-	}
-	else if (tipo == 'B'){
-
-	}
+	return new Globo(juegofact, JuegoPG::TGlobo, rand() % 700, rand() % 700);
+	return new Vago();
 }
 
-ObjetoJuego*Factory::createSpecialElement(char tipo)
+ObjetoJuego*FactoryPG::createSpecialElement()
 {
-	if (tipo == 'M'){
-
-	}
+	return new Mariposa(juegofact, JuegoPG::TMariposa, rand() % 700, rand() % 700);
 }
 
-ObjetoJuego*Factory::createPrizeElement(char tipo)
+ObjetoJuego*FactoryPG::createPrizeElement()
 {
-	if (tipo == 'P'){}
+	return new Premio(juegofact, JuegoPG::TPremio, rand() % 700, rand() % 700);
 }
+	

@@ -4,8 +4,12 @@ class FactoryPG :
 	public Factory
 {
 public:
-	FactoryPG();
+	FactoryPG(JuegoPG * juego);
 	~FactoryPG();
+
+	ObjetoJuego* createNormalElement();
+	ObjetoJuego* createSpecialElement();
+	ObjetoJuego* createPrizeElement();
 
 };
 
