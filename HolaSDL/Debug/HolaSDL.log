@@ -1,4 +1,4 @@
-﻿Build started 28/02/2017 17:15:05.
+﻿Build started 01/03/2017 17:10:01.
      1>Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
      1>Link:
          HolaSDL.vcxproj -> C:\hlocal\TPV3\bin\HolaSDLDebug.exe
@@ -6,4 +6,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.03
+Time Elapsed 00:00:00.20

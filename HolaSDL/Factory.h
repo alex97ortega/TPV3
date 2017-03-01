@@ -1,6 +1,5 @@
 #pragma once
 #include "ObjetoJuego.h"
-#include "JuegoPG.h"
 
 class Factory
 {
@@ -14,7 +13,10 @@ public:
 	{
 	}
 
-	virtual ObjetoJuego* createNormal(JuegoPG* juego, JuegoPG::Texturas_t text, int a, int b) = 0;
-	virtual ObjetoJuego* createSpecial(JuegoPG* juego, JuegoPG::Texturas_t text, int a, int b) = 0;
-	virtual ObjetoJuego* createPrize(JuegoPG* juego, JuegoPG::Texturas_t text, int a, int b) = 0;	
+	virtual ObjetoJuego* createNormalElement() = 0;
+	virtual ObjetoJuego* createSpecialElement() = 0;
+	virtual ObjetoJuego* createPrizeElement() = 0;
+
 };
+
+//clase abstracta metodos comunes
