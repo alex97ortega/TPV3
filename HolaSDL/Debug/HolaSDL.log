@@ -1,9 +1,16 @@
-﻿Build started 01/03/2017 17:10:01.
-     1>Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         HolaSDL.vcxproj -> C:\hlocal\TPV3\bin\HolaSDLDebug.exe
-     1>Done Building Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.20
+﻿  PBBVMprog.cpp
+  PBBVM.cpp
+  PBB.cpp
+c:\users\alejandro\desktop\tpv3\holasdl\pbb.cpp(6): error C2512: 'PBBVMprog': no hay disponible un constructor predeterminado adecuado
+  c:\users\alejandro\desktop\tpv3\holasdl\pbbvmprog.h(5): note: vea la declaración de 'PBBVMprog'
+  JuegoPG.cpp
+c:\users\alejandro\desktop\tpv3\holasdl\juegopg.cpp(87): warning C4018: '<': no coinciden signed/unsigned
+  BouncingBall.cpp
+  Generando código...
+  Compilando...
+  PlayPG.cpp
+c:\users\alejandro\desktop\tpv3\holasdl\playpg.cpp(82): warning C4018: '<': no coinciden signed/unsigned
+c:\users\alejandro\desktop\tpv3\holasdl\playpg.cpp(87): warning C4018: '<': no coinciden signed/unsigned
+  FactoryPG.cpp
+  FactoryBola.cpp
+  Generando código...

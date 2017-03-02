@@ -213,7 +213,6 @@ bool JuegoPG::handle_event(){ //eventos del teclado y ratón
 		}
 		else if (e.type == SDL_MOUSEBUTTONUP) { // click izquierdo para llamar al onclick
 			if (e.button.button == SDL_BUTTON_LEFT) {
-				std::cout <<puntos << " CLICK \n";
 				onClick(e.button.x, e.button.y);
 				
 			}

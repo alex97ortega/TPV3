@@ -79,6 +79,7 @@ void BouncingBall::update(){
 			puntos -= 10;
 		}
 	}
+	if (puntos <= 0) explotado = true;
 }
 
 
