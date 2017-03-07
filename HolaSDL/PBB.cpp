@@ -2,7 +2,7 @@
 
 
 
-PBB::PBB(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y)
+PBB::PBB(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y) : prog("/tmp/prog.vm")
 {
 	juegootp = juego;
 	Ttextura = text;
@@ -18,7 +18,9 @@ PBB::PBB(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y)
 
 	explotado = false;
 
-	puntos = (rand() % 51) * 2;
+	puntos = (rand() % 51) + 50;
+
+	clicks = 0;
 }
 
 
@@ -48,7 +50,7 @@ void PBB::incrY() {
 }
 
 void PBB::onClick() {
-	puntos ++;
+	clicks ++;
 	//llamar máquina virtual
 }
 
@@ -82,4 +84,6 @@ void PBB::update() {
 
 	// hay que hacer este mismo código pero haciendo llamadas al programa con vm.run(prog, *this);
 }
+
+
 

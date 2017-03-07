@@ -1,16 +1,37 @@
-﻿  PBBVMprog.cpp
-  PBBVM.cpp
-  PBB.cpp
-c:\users\alejandro\desktop\tpv3\holasdl\pbb.cpp(6): error C2512: 'PBBVMprog': no hay disponible un constructor predeterminado adecuado
-  c:\users\alejandro\desktop\tpv3\holasdl\pbbvmprog.h(5): note: vea la declaración de 'PBBVMprog'
-  JuegoPG.cpp
-c:\users\alejandro\desktop\tpv3\holasdl\juegopg.cpp(87): warning C4018: '<': no coinciden signed/unsigned
-  BouncingBall.cpp
-  Generando código...
-  Compilando...
-  PlayPG.cpp
-c:\users\alejandro\desktop\tpv3\holasdl\playpg.cpp(82): warning C4018: '<': no coinciden signed/unsigned
-c:\users\alejandro\desktop\tpv3\holasdl\playpg.cpp(87): warning C4018: '<': no coinciden signed/unsigned
-  FactoryPG.cpp
-  FactoryBola.cpp
-  Generando código...
+﻿Build started 07/03/2017 17:35:30.
+     1>Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PBB.cpp
+         PBB.cpp
+       Link:
+         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\TPV3\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\TPV3\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\TPV3\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\Boton.obj
+         Debug\BouncingBall.obj
+         Debug\Config.obj
+         Debug\Error.obj
+         Debug\EstadoPG.obj
+         Debug\FactoryBola.obj
+         Debug\FactoryPG.obj
+         Debug\GameOver.obj
+         Debug\Globo.obj
+         Debug\GloboA.obj
+         Debug\JuegoPG.obj
+         Debug\main.obj
+         Debug\Mariposa.obj
+         Debug\MenuPG.obj
+         Debug\ObjetoPG.obj
+         Debug\Pausa.obj
+         Debug\PBB.obj
+         Debug\PBBVM.obj
+         Debug\PBBVMprog.obj
+         Debug\PlayPG.obj
+         Debug\Premio.obj
+         Debug\SDLError.obj
+         Debug\texturasError.obj
+         Debug\texturasSDL.obj
+         Debug\Vago.obj
+         HolaSDL.vcxproj -> C:\hlocal\TPV3\bin\HolaSDLDebug.exe
+     1>Done Building Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.73
