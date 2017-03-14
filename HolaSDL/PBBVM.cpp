@@ -4,6 +4,7 @@
 
 PBBVM::PBBVM()
 {
+	p = 100;
 }
 
 
@@ -37,34 +38,34 @@ void PBBVM::run(PBBVMprog& prog, PBBExternAccess& ball) {
 			ball.desactivate();
 			break;
 		case PBBVMprog::GET_POINTS:
-			ball.incrY();
+			ball.getPoints();
 			break;
 		case PBBVMprog::GAIN_POINTS:
-			ball.incrX();
+			ball.gainPoints(p);
 			break;
 		case PBBVMprog::SET_POINTS:
-			ball.incrY();
+			ball.setPoints(p);
 			break;
 		case PBBVMprog::ADD:
-			ball.incrX();
+			ball.add();
 			break;
 		case PBBVMprog::SUB:
-			ball.incrY();
+			ball.sub();
 			break;
 		case PBBVMprog::MUL:
-			ball.incrX();
+			ball.mul();
 			break;
 		case PBBVMprog::PUSH_N:
-			ball.incrY();
+			ball.push_n(1);
 			break;
 		case PBBVMprog::GOTO_N:
-			ball.incrX();
+			ball.goto_n(1);
 			break;
 		case PBBVMprog::JMPZ_N:
-			ball.incrY();
+			ball.jmpz_n();
 			break;
 		case PBBVMprog::JMPGT_N:
-			ball.incrX();
+			ball.jmpgt_n();
 			break;
 		}
 	}

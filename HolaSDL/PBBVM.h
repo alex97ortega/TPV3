@@ -8,5 +8,6 @@ public:
 	~PBBVM();
 
 	void run(PBBVMprog& prog, PBBExternAccess& ball);
+	int p;
 };
 

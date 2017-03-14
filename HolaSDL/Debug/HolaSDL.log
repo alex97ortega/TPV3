@@ -1,8 +1,10 @@
-﻿Build started 07/03/2017 17:35:30.
+﻿Build started 14/03/2017 16:52:41.
      1>Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt PBB.cpp
+         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt FactoryPBB.cpp PBB.cpp
          PBB.cpp
+         FactoryPBB.cpp
+         Generating Code...
        Link:
          C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\TPV3\bin\HolaSDLDebug.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\TPV3\bin\HolaSDLDebug.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\TPV3\bin\HolaSDLDebug.lib" /MACHINE:X86 Debug\Boton.obj
          Debug\BouncingBall.obj
@@ -10,6 +12,7 @@
          Debug\Error.obj
          Debug\EstadoPG.obj
          Debug\FactoryBola.obj
+         Debug\FactoryPBB.obj
          Debug\FactoryPG.obj
          Debug\GameOver.obj
          Debug\Globo.obj
@@ -29,9 +32,10 @@
          Debug\texturasError.obj
          Debug\texturasSDL.obj
          Debug\Vago.obj
-         HolaSDL.vcxproj -> C:\hlocal\TPV3\bin\HolaSDLDebug.exe
-     1>Done Building Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" (Build target(s)).
+     1>PBB.obj : error LNK2001: unresolved external symbol "public: static class std::stack<int,class std::deque<int,class std::allocator<int> > > PBBVMprog::pila" (?pila@PBBVMprog@@2V?$stack@HV?$deque@HV?$allocator@H@std@@@std@@@std@@A)
+     1>C:\hlocal\TPV3\bin\HolaSDLDebug.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.73
+Time Elapsed 00:00:00.96

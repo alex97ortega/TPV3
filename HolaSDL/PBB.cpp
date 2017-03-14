@@ -2,8 +2,9 @@
 
 
 
-PBB::PBB(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y) : prog("/tmp/prog.vm")
+PBB::PBB(JuegoPG* juego, PBBVMprog*pb, JuegoPG::Texturas_t text, int x, int y) : prog("/tmp/prog.vm")
 {
+	p = pb;
 	juegootp = juego;
 	Ttextura = text;
 
