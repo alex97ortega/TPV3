@@ -52,8 +52,71 @@ void PBB::incrY() {
 
 void PBB::onClick() {
 	clicks ++;
-	//llamar máquina virtual
 }
+int  PBB::getX() { 
+	return pimgx; std::cout << "getX"; 
+}
+
+int  PBB::getY() { 
+	return pimgy; std::cout << "getY"; 
+}
+
+void  PBB::setX(int x) { 
+	this->pimgx = x; std::cout << "setX"; 
+}
+
+void  PBB::setY(int y) { 
+	this->pimgy = y; std::cout << "setY";
+}
+
+int  PBB::getClicks() { 
+	return clicks; std::cout << "getClicks"; 
+}
+
+void  PBB::desactivate(){
+	explotado = true; std::cout << "desactivate"; 
+}
+
+int  PBB::getPoints(){
+	return puntos; std::cout << "getPoints"; 
+}
+
+void  PBB::setPoints(int p){
+	this->puntos = p; std::cout << "setPoints"; 
+}
+
+void  PBB::gainPoints(int gp){
+	this->puntos += gp; std::cout << "gainPoints;"; 
+}
+/*void  PBB::add(){
+	; std::cout << "add"; 
+}
+
+void  PBB::sub(){
+	; std::cout << "sub"; 
+}
+
+void  PBB::mul(){
+	; std::cout << "mul"; 
+}
+
+void  PBB::push_n(int i){
+	std::cout << "push" + i;
+}
+
+void  PBB::goto_n(int i){
+	; std::cout << "goto" + i; 
+}
+
+void  PBB::jmpz_n(){ 
+	; std::cout << "jmpz"; 
+}
+
+void  PBB::jmpgt_n(){
+	; std::cout << "jmpgt"; 
+}*/
+
+
 
 void PBB::update() {
 	

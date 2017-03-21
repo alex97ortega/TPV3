@@ -19,24 +19,24 @@ public:
 	void update();
 	void draw();
 
-	int getX() { return pimgx; std::cout << "getX"; }
-	int getY() { return pimgy; std::cout << "getY"; }
-	void setX(int x) { this->pimgx = x; std::cout << "setX"; }
-	void setY(int y) { this->pimgy = y; std::cout << "setY"; }
-	int getClicks() { return clicks; std::cout << "getClicks"; }
-	void desactivate(){ explotado = true; std::cout << "desactivate"; }
-	int getPoints(){ return puntos; std::cout << "getPoints"; }
-	void setPoints(int p){ this->puntos = p; std::cout << "setPoints"; }
-	void gainPoints(int gp){ this->puntos += gp; std::cout << "gainPoints;"; }
-
-	void add(){ ; std::cout << "add"; }
-	void sub(){ ; std::cout << "sub"; }
-	void mul(){ ; std::cout << "mul"; }
-	void push_n(int i){ p->pila.push(i); std::cout << "push" + i; }
-	void goto_n(int i){ ; std::cout << "goto" + i; }
-	void jmpz_n(){ ; std::cout << "jmpz"; }
-	void jmpgt_n(){ ; std::cout << "jmpgt"; }
-
+	int getX();
+	int getY();
+	void setX(int x);
+	void setY(int y);
+	int getClicks();
+	void desactivate();
+	int getPoints();
+	void setPoints(int p);
+	void gainPoints(int gp);
+	/*
+	void add();
+	void sub();
+	void mul();
+	void push_n(int i);
+	void goto_n(int i);
+	void jmpz_n();
+	void jmpgt_n();
+*/
 
 	JuegoPG* juegootp;
 	PBBVMprog*p;

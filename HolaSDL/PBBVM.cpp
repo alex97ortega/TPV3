@@ -5,6 +5,7 @@
 PBBVM::PBBVM()
 {
 	p = 100;
+
 }
 
 
@@ -23,22 +24,25 @@ void PBBVM::run(PBBVMprog& prog, PBBExternAccess& ball) {
 			ball.incrY();
 			break; // meter más instrucciones	*/
 		case PBBVMprog::GET_DX:
-			ball.getX();
+			pila.push(ball.getX()); 
 			break;
 		case PBBVMprog::GET_DY:
-			ball.getY();
+			pila.push(ball.getY());
 			break;
 		case PBBVMprog::SET_DX:
-			ball.setX(1);
+			ball.setX(pila.pop());
 			break;
 		case PBBVMprog::SET_DY:
-			ball.setY(1);
+			ball.setY(pila.pop);
+			break;
+		case PBBVMprog::GET_CLICKS:
+			pila.push(ball.getClicks());
 			break;
 		case PBBVMprog::DESACTIVATE:
 			ball.desactivate();
 			break;
 		case PBBVMprog::GET_POINTS:
-			ball.getPoints();
+			pila.push(ball.getPoints());
 			break;
 		case PBBVMprog::GAIN_POINTS:
 			ball.gainPoints(p);
@@ -47,16 +51,17 @@ void PBBVM::run(PBBVMprog& prog, PBBExternAccess& ball) {
 			ball.setPoints(p);
 			break;
 		case PBBVMprog::ADD:
-			ball.add();
+			pila.push(pila.pop() + pila.pop());
 			break;
 		case PBBVMprog::SUB:
-			ball.sub();
+			pila.push(pila.pop() - pila.pop());
 			break;
 		case PBBVMprog::MUL:
-			ball.mul();
+			pila.push(pila.pop() * pila.pop());
 			break;
 		case PBBVMprog::PUSH_N:
-			ball.push_n(1);
+			pila.push(*((int*)(instr + pc + 1)));
+			pc = pc + sizeof(int); // the for loop will add 
 			break;
 		case PBBVMprog::GOTO_N:
 			ball.goto_n(1);

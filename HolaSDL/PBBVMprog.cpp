@@ -36,7 +36,8 @@ void PBBVMprog::compile(std::string infile, std::string outfile) {
 			else if (keyword == "increment_y") {
 				bytecode[pc++] = INCR_Y;
 			}*/
-			/*else */if (keyword == "GET_DX") {
+			/*else */
+			if (keyword == "GET_DX") {
 				bytecode[pc++] = GET_DX;
 			}
 			else if (keyword == "GET_DY") {

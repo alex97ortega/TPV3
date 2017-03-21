@@ -9,5 +9,6 @@ public:
 
 	void run(PBBVMprog& prog, PBBExternAccess& ball);
 	int p;
+	static std::stack<int> pila;
 };
 

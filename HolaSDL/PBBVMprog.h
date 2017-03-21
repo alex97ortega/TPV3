@@ -21,7 +21,7 @@ public:
 		return size;
 	}
 
-	static std::stack<int> pila;
+	
 
 private:
 	static void compile(std::string infile, std::string outfile);
