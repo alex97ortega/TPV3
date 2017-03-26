@@ -13,8 +13,7 @@ public:
 	PBB(JuegoPG* juego, PBBVMprog*p, JuegoPG::Texturas_t text, int x, int y);
 	~PBB();
 
-	void incrX();
-	void incrY();
+
 	void onClick();
 	void update();
 	void draw();
@@ -28,15 +27,6 @@ public:
 	int getPoints();
 	void setPoints(int p);
 	void gainPoints(int gp);
-	/*
-	void add();
-	void sub();
-	void mul();
-	void push_n(int i);
-	void goto_n(int i);
-	void jmpz_n();
-	void jmpgt_n();
-*/
 
 	JuegoPG* juegootp;
 	PBBVMprog*p;

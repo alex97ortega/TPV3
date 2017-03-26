@@ -17,12 +17,7 @@ void PBBVM::run(PBBVMprog& prog, PBBExternAccess& ball) {
 	int size = prog.getInstrucSize();
 	for (int pc = 0; pc < size; pc++) {
 		switch (instr[pc]) {
-		/*case PBBVMprog::INCR_X:
-			ball.incrX();
-			break;
-		case PBBVMprog::INCR_Y:
-			ball.incrY();
-			break; // meter más instrucciones	*/
+
 		case PBBVMprog::GET_DX:
 			pila.push(ball.getX()); 
 			break;
@@ -30,10 +25,12 @@ void PBBVM::run(PBBVMprog& prog, PBBExternAccess& ball) {
 			pila.push(ball.getY());
 			break;
 		case PBBVMprog::SET_DX:
-			ball.setX(pila.pop());
+			ball.setX(pila.top());
+			pila.pop();
 			break;
 		case PBBVMprog::SET_DY:
-			ball.setY(pila.pop);
+			ball.setY(pila.top());
+			pila.pop();
 			break;
 		case PBBVMprog::GET_CLICKS:
 			pila.push(ball.getClicks());
@@ -45,32 +42,53 @@ void PBBVM::run(PBBVMprog& prog, PBBExternAccess& ball) {
 			pila.push(ball.getPoints());
 			break;
 		case PBBVMprog::GAIN_POINTS:
-			ball.gainPoints(p);
+			ball.gainPoints(pila.top());
+			pila.pop();
 			break;
 		case PBBVMprog::SET_POINTS:
-			ball.setPoints(p);
+			ball.setPoints(pila.top());
+			pila.pop();
 			break;
 		case PBBVMprog::ADD:
-			pila.push(pila.pop() + pila.pop());
+			int a = pila.top();
+			pila.pop();
+			int b = pila.top();
+			pila.pop();
+			pila.push(a + b);
 			break;
 		case PBBVMprog::SUB:
-			pila.push(pila.pop() - pila.pop());
+			int a = pila.top();
+			pila.pop();
+			int b = pila.top();
+			pila.pop();
+			pila.push(a - b);
 			break;
 		case PBBVMprog::MUL:
-			pila.push(pila.pop() * pila.pop());
+			int a = pila.top();
+			pila.pop();
+			int b = pila.top();
+			pila.pop();
+			pila.push(a * b);
 			break;
 		case PBBVMprog::PUSH_N:
 			pila.push(*((int*)(instr + pc + 1)));
-			pc = pc + sizeof(int); // the for loop will add 
+			pc = pc + sizeof(int);
 			break;
 		case PBBVMprog::GOTO_N:
-			ball.goto_n(1);
+			pc = (*((int*)(instr + pc + 1)));
 			break;
 		case PBBVMprog::JMPZ_N:
-			ball.jmpz_n();
+			if (pila.top() == 0)
+				pc = (*((int*)(instr + pc + 1)));
+			pila.pop();
 			break;
 		case PBBVMprog::JMPGT_N:
-			ball.jmpgt_n();
+			int a = pila.top();
+			pila.pop();
+			int b = pila.top();
+			pila.pop();
+			if (a > b)
+				pc = (*((int*)(instr + pc + 1)));
 			break;
 		}
 	}

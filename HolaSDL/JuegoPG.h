@@ -29,6 +29,7 @@ public:
 
 	void darPuntos(int i);//metodos para pasr los puntos
 	int damePuntos();
+	void setPuntos(int i){ puntos += i; }
 
 	EstadoJuego* topEstado();// Estados del juego
 	void changeState(EstadoJuego* newSt);

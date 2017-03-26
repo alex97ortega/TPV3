@@ -22,21 +22,22 @@ void PBBVMprog::compile(std::string infile, std::string outfile) {
 	out.open(outfile, std::ios::binary);
 
 	char bytecode[MAX_SIZE];
+	int addr[MAX_SIZE];
+	bool pending[MAX_SIZE];
 
 	std::string keyword;
 	int  pc = 0;
+	int bytecodeNum = -1;
+
 
 	while (!in.eof()) {
 		in >> keyword;
 		if (in.good()) {
+			bytecodeNum++;
+			addr[bytecodeNum] = pc;
+			pending[bytecodeNum] = false;
 			std::cout << "Compiling: " << keyword << std::endl;
-			/*if (keyword == "increment_x") {
-				bytecode[pc++] = INCR_X;
-			}
-			else if (keyword == "increment_y") {
-				bytecode[pc++] = INCR_Y;
-			}*/
-			/*else */
+
 			if (keyword == "GET_DX") {
 				bytecode[pc++] = GET_DX;
 			}
@@ -77,22 +78,69 @@ void PBBVMprog::compile(std::string infile, std::string outfile) {
 				bytecode[pc++] = PUSH_N;
 			}
 			else if (keyword == "GOTO_N") {
+				int n;
+				in >> n;
 				bytecode[pc++] = GOTO_N;
+				if (n < bytecodeNum){
+					(*((int*)(bytecode + pc + 1))) = addr[n];
+				}
+				else {
+					pending[pc] = true;
+					(*((int*)(bytecode + pc + 1))) = n;
+				}
+				pc = pc + sizeof(int);
 			}
+
+
 			else if (keyword == "JMPZ_N") {
+				int n;
+				in >> n;
 				bytecode[pc++] = JMPZ_N;
+				if (n < bytecodeNum){
+					(*((int*)(bytecode + pc + 1))) = addr[n];
+				}
+				else {
+					pending[pc] = true;
+					(*((int*)(bytecode + pc + 1))) = n;
+				}
+				pc = pc + sizeof(int);
 			}
-			else if (keyword == "JMPGT_N") {
-				bytecode[pc++] = JMPGT_N;
+		}
+		else if (keyword == "JMPGT_N") {
+			int n;
+			in >> n;
+			bytecode[pc++] = JMPGT_N;
+			if (n < bytecodeNum){
+				(*((int*)(bytecode + pc + 1))) = addr[n];
 			}
 			else {
-				throw "Error!";
-			} 
+				pending[pc] = true;
+				(*((int*)(bytecode + pc + 1))) = n;
+			}
+			pc = pc + sizeof(int);
+		}
+
+		else {
+			throw "Error!";
 		}
 	}
-	out.write(bytecode, pc);
 
+
+	for (int i = 0; i < bytecodeNum; i++) {
+		if (pending[i]) {
+			int n = (*(int*)(bytecode + addr[i] + 1));
+			if (n >= bytecodeNum)
+				(*(int*)(bytecode + addr[i] + 1)) = addr[bytecodeNum] + 1;
+			else{
+				(*(int*)(bytecode + addr[i] + 1)) = addr[n];
+			}
+		}
+	}
+
+
+	out.write(bytecode, pc);
 	in.close();
 	out.close();
+
 }
 

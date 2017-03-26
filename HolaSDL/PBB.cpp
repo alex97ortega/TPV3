@@ -42,31 +42,26 @@ void PBB::draw() {
 	}
 }
 
-void PBB::incrX() { 
-	dx ++; 
-}
 
-void PBB::incrY() {
-	dy ++;
-}
 
 void PBB::onClick() {
 	clicks ++;
 }
+
 int  PBB::getX() { 
-	return pimgx; std::cout << "getX"; 
+	return dx; std::cout << "getX"; 
 }
 
 int  PBB::getY() { 
-	return pimgy; std::cout << "getY"; 
+	return dy; std::cout << "getY"; 
 }
 
 void  PBB::setX(int x) { 
-	this->pimgx = x; std::cout << "setX"; 
+	dx = x; std::cout << "setX";
 }
 
 void  PBB::setY(int y) { 
-	this->pimgy = y; std::cout << "setY";
+	dx = y; std::cout << "setY";
 }
 
 int  PBB::getClicks() { 
@@ -82,39 +77,13 @@ int  PBB::getPoints(){
 }
 
 void  PBB::setPoints(int p){
-	this->puntos = p; std::cout << "setPoints"; 
+	puntos = p; std::cout << "setPoints"; 
 }
 
 void  PBB::gainPoints(int gp){
-	this->puntos += gp; std::cout << "gainPoints;"; 
-}
-/*void  PBB::add(){
-	; std::cout << "add"; 
+	juegootp->setPuntos(gp); std::cout << "gainPoints;"; 
 }
 
-void  PBB::sub(){
-	; std::cout << "sub"; 
-}
-
-void  PBB::mul(){
-	; std::cout << "mul"; 
-}
-
-void  PBB::push_n(int i){
-	std::cout << "push" + i;
-}
-
-void  PBB::goto_n(int i){
-	; std::cout << "goto" + i; 
-}
-
-void  PBB::jmpz_n(){ 
-	; std::cout << "jmpz"; 
-}
-
-void  PBB::jmpgt_n(){
-	; std::cout << "jmpgt"; 
-}*/
 
 
 
