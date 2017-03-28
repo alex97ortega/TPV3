@@ -10,84 +10,6 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="BallObserver.cpp" />
-    <ClCompile Include="BounceOnBorders.cpp" />
-    <ClCompile Include="ComponentSwitcher.cpp" />
-    <ClCompile Include="Font.cpp" />
-    <ClCompile Include="GameComponent.cpp" />
-    <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="GameStateObserver.cpp" />
-    <ClCompile Include="ImageRendered.cpp" />
-    <ClCompile Include="InputComponent.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Music.cpp" />
-    <ClCompile Include="PaddleAIPhysics.cpp" />
-    <ClCompile Include="PaddleKeyboardInputComp.cpp" />
-    <ClCompile Include="PaddleMouseInputComp.cpp" />
-    <ClCompile Include="PhysicsComponent.cpp" />
-    <ClCompile Include="PingPong.cpp" />
-    <ClCompile Include="PingPongPhysics.cpp" />
-    <ClCompile Include="RectRender.cpp" />
-    <ClCompile Include="RenderComponent.cpp" />
-    <ClCompile Include="SDLGame.cpp" />
-    <ClCompile Include="SDLResources.cpp" />
-    <ClCompile Include="SimpleMovePhysics.cpp" />
-    <ClCompile Include="SoundEffect.cpp" />
-    <ClCompile Include="StopOnBordersPhysics.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="BallObserver.h" />
-    <ClInclude Include="BounceOnBorders.h" />
-    <ClInclude Include="ComponentSwitcher.h" />
-    <ClInclude Include="Font.h" />
-    <ClInclude Include="GameComponent.h" />
-    <ClInclude Include="GameManager.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="GameStateObserver.h" />
-    <ClInclude Include="ImageRendered.h" />
-    <ClInclude Include="InputComponent.h" />
-    <ClInclude Include="Music.h" />
-    <ClInclude Include="PaddleAIPhysics.h" />
-    <ClInclude Include="PaddleKeyboardInputComp.h" />
-    <ClInclude Include="PaddleMouseInputComp.h" />
-    <ClInclude Include="PhysicsComponent.h" />
-    <ClInclude Include="PingPong.h" />
-    <ClInclude Include="PingPongPhysics.h" />
-    <ClInclude Include="RectRender.h" />
-    <ClInclude Include="RenderComponent.h" />
-    <ClInclude Include="SDLGame.h" />
-    <ClInclude Include="SDLResources.h" />
-    <ClInclude Include="SimpleMovePhysics.h" />
-    <ClInclude Include="SoundEffect.h" />
-    <ClInclude Include="StopOnBordersPhysics.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="Vector2D.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="fonts\ARIAL.ttf" />
-    <Font Include="fonts\Capture_it.ttf" />
-    <Font Include="fonts\NES-Chimera.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="images\ai.png" />
-    <Image Include="images\blank.png" />
-    <Image Include="images\keyboard.png" />
-    <Image Include="images\mouse.png" />
-    <Image Include="images\tennis_ball.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="sound\beat.wav" />
-    <Media Include="sound\boooo.wav" />
-    <Media Include="sound\cheer.wav" />
-    <Media Include="sound\missed.wav" />
-    <Media Include="sound\paddle_hit.wav" />
-    <Media Include="sound\score_update.wav" />
-    <Media Include="sound\wall_hit.wav" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}</ProjectGuid>
     <RootNamespace>HolaSDL</RootNamespace>
@@ -118,10 +40,7 @@
     <Import Project="..\ProyectosSDL.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)SDL2_ttf-2.0.14\include;$(SolutionDir)SDL2_mixer-2.0.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)SDL2_ttf-2.0.14\lib\x86;$(SolutionDir)SDL2_mixer-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -130,7 +49,6 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -147,6 +65,65 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Boton.cpp" />
+    <ClCompile Include="BouncingBall.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="Error.cpp" />
+    <ClCompile Include="EstadoPG.cpp" />
+    <ClCompile Include="FactoryBola.cpp" />
+    <ClCompile Include="FactoryPBB.cpp" />
+    <ClCompile Include="FactoryPG.cpp" />
+    <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="Globo.cpp" />
+    <ClCompile Include="GloboA.cpp" />
+    <ClCompile Include="JuegoPG.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mariposa.cpp" />
+    <ClCompile Include="MenuPG.cpp" />
+    <ClCompile Include="ObjetoPG.cpp" />
+    <ClCompile Include="Pausa.cpp" />
+    <ClCompile Include="PBB.cpp" />
+    <ClCompile Include="PBBVM.cpp" />
+    <ClCompile Include="PBBVMprog.cpp" />
+    <ClCompile Include="PlayPG.cpp" />
+    <ClCompile Include="Premio.cpp" />
+    <ClCompile Include="SDLError.cpp" />
+    <ClCompile Include="texturasError.cpp" />
+    <ClCompile Include="texturasSDL.cpp" />
+    <ClCompile Include="Vago.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Boton.h" />
+    <ClInclude Include="BouncingBall.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="Error.h" />
+    <ClInclude Include="EstadoJuego.h" />
+    <ClInclude Include="EstadoPG.h" />
+    <ClInclude Include="Factory.h" />
+    <ClInclude Include="FactoryBola.h" />
+    <ClInclude Include="FactoryPBB.h" />
+    <ClInclude Include="FactoryPG.h" />
+    <ClInclude Include="GameOver.h" />
+    <ClInclude Include="Globo.h" />
+    <ClInclude Include="GloboA.h" />
+    <ClInclude Include="JuegoPG.h" />
+    <ClInclude Include="Mariposa.h" />
+    <ClInclude Include="MenuPG.h" />
+    <ClInclude Include="ObjetoJuego.h" />
+    <ClInclude Include="ObjetoPG.h" />
+    <ClInclude Include="Pausa.h" />
+    <ClInclude Include="PBB.h" />
+    <ClInclude Include="PBBExternAccess.h" />
+    <ClInclude Include="PBBVM.h" />
+    <ClInclude Include="PBBVMprog.h" />
+    <ClInclude Include="PlayPG.h" />
+    <ClInclude Include="Premio.h" />
+    <ClInclude Include="SDLError.h" />
+    <ClInclude Include="texturasError.h" />
+    <ClInclude Include="texturasSDL.h" />
+    <ClInclude Include="Vago.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

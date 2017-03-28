@@ -1,0 +1,14 @@
+#pragma once
+#include "PBBVMprog.h"
+#include "PBBExternAccess.h"
+class PBBVM // representa la máquina virtual
+{
+public:
+	PBBVM();
+	~PBBVM();
+
+	void run(PBBVMprog& prog, PBBExternAccess& ball);
+	int p;
+	static std::stack<int> pila;
+};
+
