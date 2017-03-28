@@ -1,26 +1,9 @@
-﻿Compilación iniciada a las 21/03/2017 17:28:38.
-     1>Proyecto "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
-     1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt FactoryPBB.cpp PBB.cpp PBBVM.cpp
-         PBBVM.cpp
-     1>c:\hlocal\tpv3\holasdl\pbbvm.cpp(33): error C2664: 'void PBBExternAccess::setX(int)' : el argumento 1 no puede convertirse de 'void' a 'int'
-                 Las expresiones de tipo void no se pueden convertir en otros tipos
-     1>c:\hlocal\tpv3\holasdl\pbbvm.cpp(36): error C3867: 'std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>::pop': falta la lista de argumentos de la llamada a la función; utilice '&std::stack<int,std::deque<_Ty,std::allocator<_Ty>>>::pop' para crear un puntero al miembro
-                 with
-                 [
-                     _Ty=int
-                 ]
-     1>c:\hlocal\tpv3\holasdl\pbbvm.cpp(54): error C2186: '+' : operando no válido de tipo 'void'
-     1>c:\hlocal\tpv3\holasdl\pbbvm.cpp(57): error C2186: '-' : operando no válido de tipo 'void'
-     1>c:\hlocal\tpv3\holasdl\pbbvm.cpp(60): error C2296: '*' : no es válido; el operando izquierdo es de tipo 'void'
-     1>c:\hlocal\tpv3\holasdl\pbbvm.cpp(60): error C2297: '*' : no es válido; el operando derecho es de tipo 'void'
-         PBB.cpp
-     1>c:\hlocal\tpv3\holasdl\pbb.cpp : fatal error C1041: no puede abrir la base de datos de programa 'c:\hlocal\tpv3\holasdl\debug\vc120.idb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-         FactoryPBB.cpp
-         Generando código...
-     1>cl : Línea de comandos warning D9028: error de recompilación mínimo, revirtiendo a la compilación normal
-     1>Compilación del proyecto terminada "C:\hlocal\TPV3\HolaSDL\HolaSDL.vcxproj" (Build destinos) -- ERROR.
+﻿Compilación iniciada a las 28/03/2017 16:59:46.
+     1>Proyecto "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" en el nodo 2 (Build destinos).
+     1>Link:
+         HolaSDL.vcxproj -> C:\hlocal\TPV5\bin\HolaSDLDebug.exe
+     1>Compilación del proyecto terminada "C:\hlocal\TPV5\HolaSDL\HolaSDL.vcxproj" (Build destinos).
 
-ERROR al compilar.
+Compilación correcta.
 
-Tiempo transcurrido 00:00:00.99
+Tiempo transcurrido 00:00:00.15

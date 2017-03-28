@@ -15,172 +15,211 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BallObserver.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="BounceOnBorders.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentSwitcher.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponent.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateObserver.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageRendered.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="JuegoPG.cpp">
+    <ClCompile Include="Music.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="ObjetoPG.cpp">
+    <ClCompile Include="PaddleAIPhysics.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Globo.cpp">
+    <ClCompile Include="PaddleKeyboardInputComp.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="texturasSDL.cpp">
+    <ClCompile Include="PaddleMouseInputComp.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Mariposa.cpp">
+    <ClCompile Include="PhysicsComponent.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Premio.cpp">
+    <ClCompile Include="PingPong.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="GloboA.cpp">
+    <ClCompile Include="PingPongPhysics.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Error.cpp">
+    <ClCompile Include="RectRender.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="SDLError.cpp">
+    <ClCompile Include="RenderComponent.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="texturasError.cpp">
+    <ClCompile Include="SDLGame.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="EstadoPG.cpp">
+    <ClCompile Include="SDLResources.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Boton.cpp">
+    <ClCompile Include="SimpleMovePhysics.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="PlayPG.cpp">
+    <ClCompile Include="SoundEffect.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="MenuPG.cpp">
+    <ClCompile Include="StopOnBordersPhysics.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="GameOver.cpp">
+    <ClCompile Include="Texture.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
-    <ClCompile Include="Pausa.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="BouncingBall.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="Vago.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="FactoryPG.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="FactoryBola.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="Config.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="PBB.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="PBBVMprog.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="PBBVM.cpp">
-      <Filter>Archivos de código fuente</Filter>
-    </ClCompile>
-    <ClCompile Include="FactoryPBB.cpp">
+    <ClCompile Include="Vector2D.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ObjetoJuego.h">
+    <ClInclude Include="BallObserver.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="JuegoPG.h">
+    <ClInclude Include="BounceOnBorders.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="ObjetoPG.h">
+    <ClInclude Include="ComponentSwitcher.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Globo.h">
+    <ClInclude Include="Font.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="texturasSDL.h">
+    <ClInclude Include="GameComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Mariposa.h">
+    <ClInclude Include="GameManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Premio.h">
+    <ClInclude Include="GameObject.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="GloboA.h">
+    <ClInclude Include="GameStateObserver.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Error.h">
+    <ClInclude Include="ImageRendered.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="SDLError.h">
+    <ClInclude Include="InputComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="texturasError.h">
+    <ClInclude Include="Music.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="EstadoJuego.h">
+    <ClInclude Include="PaddleAIPhysics.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="EstadoPG.h">
+    <ClInclude Include="PaddleKeyboardInputComp.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Boton.h">
+    <ClInclude Include="PaddleMouseInputComp.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="PlayPG.h">
+    <ClInclude Include="PhysicsComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="MenuPG.h">
+    <ClInclude Include="PingPong.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="GameOver.h">
+    <ClInclude Include="PingPongPhysics.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Pausa.h">
+    <ClInclude Include="RectRender.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="BouncingBall.h">
+    <ClInclude Include="RenderComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Vago.h">
+    <ClInclude Include="SDLGame.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="FactoryPG.h">
+    <ClInclude Include="SDLResources.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Factory.h">
+    <ClInclude Include="SimpleMovePhysics.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="FactoryBola.h">
+    <ClInclude Include="SoundEffect.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Config.h">
+    <ClInclude Include="StopOnBordersPhysics.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="PBBExternAccess.h">
+    <ClInclude Include="Texture.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="PBB.h">
+    <ClInclude Include="Vector2D.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="PBBVMprog.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="PBBVM.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="FactoryPBB.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="fonts\ARIAL.ttf" />
+    <Font Include="fonts\Capture_it.ttf" />
+    <Font Include="fonts\NES-Chimera.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\ai.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="images\blank.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="images\keyboard.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="images\mouse.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="images\tennis_ball.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sound\beat.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\boooo.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\cheer.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\missed.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\paddle_hit.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\score_update.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
+    <Media Include="sound\wall_hit.wav">
+      <Filter>Archivos de recursos</Filter>
+    </Media>
   </ItemGroup>
 </Project>
