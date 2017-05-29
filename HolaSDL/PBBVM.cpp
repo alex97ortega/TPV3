@@ -75,7 +75,7 @@ void PBBVM::run(PBBVMprog& prog, PBBExternAccess& ball) {
 			pc = pc + sizeof(int);
 			break;
 		case PBBVMprog::GOTO_N:
-			pc = (*((int*)(instr + pc + 1)));
+			pc = (*((int*)(instr + pc + 1)) - 1);
 			break;
 		case PBBVMprog::JMPZ_N:
 			if (pila.top() == 0)

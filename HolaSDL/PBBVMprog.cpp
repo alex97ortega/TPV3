@@ -130,7 +130,7 @@ void PBBVMprog::compile(std::string infile, std::string outfile) {
 		if (pending[i]) {
 			int n = (*(int*)(bytecode + addr[i] + 1));
 			if (n >= bytecodeNum)
-				(*(int*)(bytecode + addr[i] + 1)) = addr[bytecodeNum] + 1;
+				(*(int*)(bytecode + addr[i] + 1)) = pc;
 			else{
 				(*(int*)(bytecode + addr[i] + 1)) = addr[n];
 			}

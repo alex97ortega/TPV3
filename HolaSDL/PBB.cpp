@@ -45,7 +45,7 @@ void PBB::draw() {
 
 
 void PBB::onClick() {
-	clicks ++;
+	clicks++;
 }
 
 int  PBB::getX() { 
