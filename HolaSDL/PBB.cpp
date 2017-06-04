@@ -1,10 +1,9 @@
 #include "PBB.h"
 
+PBBVM PBB::vm;
 
-
-PBB::PBB(JuegoPG* juego, PBBVMprog*pb, JuegoPG::Texturas_t text, int x, int y) : prog("/tmp/prog.vm")
+PBB::PBB(JuegoPG* juego, JuegoPG::Texturas_t text, int x, int y) : prog("/tmp/prog.vm")
 {
-	p = pb;
 	juegootp = juego;
 	Ttextura = text;
 
@@ -22,6 +21,8 @@ PBB::PBB(JuegoPG* juego, PBBVMprog*pb, JuegoPG::Texturas_t text, int x, int y) :
 	puntos = (rand() % 51) + 50;
 
 	clicks = 0;
+
+	prog = PBBVMprog("/tmp/prog.vm");
 }
 
 
@@ -44,8 +45,22 @@ void PBB::draw() {
 
 
 
-void PBB::onClick() {
-	clicks++;
+bool PBB::onClick() {
+	int x;
+	int y;
+	juegootp->getMousePos(x, y);
+	if (!explotado){
+		if (dentro(x, y)){
+			clicks++;
+			PBB::vm.run(prog, *this);
+			return true;
+		}
+
+		else
+			return false;
+	}
+	else
+		return false;
 }
 
 int  PBB::getX() { 

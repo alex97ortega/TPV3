@@ -50,23 +50,23 @@ void PBBVM::run(PBBVMprog& prog, PBBExternAccess& ball) {
 			pila.pop();
 			break;
 		case PBBVMprog::ADD:
-			int a = pila.top();
+			a = pila.top();
 			pila.pop();
-			int b = pila.top();
+			b = pila.top();
 			pila.pop();
 			pila.push(a + b);
 			break;
 		case PBBVMprog::SUB:
-			int a = pila.top();
+			a = pila.top();
 			pila.pop();
-			int b = pila.top();
+			b = pila.top();
 			pila.pop();
 			pila.push(a - b);
 			break;
 		case PBBVMprog::MUL:
-			int a = pila.top();
+			a = pila.top();
 			pila.pop();
-			int b = pila.top();
+			b = pila.top();
 			pila.pop();
 			pila.push(a * b);
 			break;
@@ -83,9 +83,9 @@ void PBBVM::run(PBBVMprog& prog, PBBExternAccess& ball) {
 			pila.pop();
 			break;
 		case PBBVMprog::JMPGT_N:
-			int a = pila.top();
+			a = pila.top();
 			pila.pop();
-			int b = pila.top();
+			b = pila.top();
 			pila.pop();
 			if (a > b)
 				pc = (*((int*)(instr + pc + 1)));

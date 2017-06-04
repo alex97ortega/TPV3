@@ -7,11 +7,6 @@ public:
 	virtual ~PBBExternAccess(){}
 
 
-	virtual void incrX() = 0;
-	virtual void incrY() = 0;
-	virtual void onClick() = 0;
-	virtual void update() = 0;
-	virtual void draw() = 0;
 
 	virtual int getX() = 0;
 	virtual int getY() = 0;
@@ -22,14 +17,13 @@ public:
 	virtual int getPoints() = 0;
 	virtual void setPoints(int) = 0;
 	virtual void gainPoints(int) = 0;
-	virtual void add() = 0;
+	/*virtual void add() = 0;
 	virtual void sub() = 0;
 	virtual void mul() = 0;
 	virtual void push_n(int i) = 0;
 	virtual void goto_n(int i) = 0;
 	virtual void jmpz_n() = 0;
-	virtual void jmpgt_n() = 0;
+	virtual void jmpgt_n() = 0;*/
 
-	int alto, ancho, pimgx, pimgy;
 };
 
